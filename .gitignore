@@ -1,0 +1,10 @@
+# .gitignore file
+.cph/
+
+build/
+test/
+
+_debug.h
+_demo.ps1
+
+todo.md

@@ -1,0 +1,24 @@
+{
+	"sol": {
+		"prefix": "sol",
+		"body": [
+			"#include <bits/stdc++.h>",
+			"",
+			"#include \"_debug.h\"",
+			"",
+			"using namespace std;",
+			"using ll = long long;",
+			"",
+			"static constexpr int MOD = 1'000'000'007;",
+			"",
+			"$1",
+			"",
+			"int main() {",
+			"    Solution sol;",
+			"",
+			"    return 0;",
+			"}"
+		],
+		"description": "sol"
+	}
+}
