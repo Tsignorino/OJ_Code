@@ -5,6 +5,7 @@ build/
 test/
 
 _debug.h
-_demo.ps1
+*.ps1
+*.bat
 
 todo.md
