@@ -58,7 +58,7 @@ private:
 public:
     void modify(int o, int l, int r, int x, const Info& v) {
         if (l + 1 == r) {
-            info[o] = info[o] + v;
+            info[o] = v;
             return;
         }
         int m = l + (r - l) / 2;
@@ -105,13 +105,13 @@ public:
 // [l, r)
 
 struct Tag {
-    ll tag = 0;
-    void apply(const Tag& t) { tag += t.tag; }
+    ll add = 0;
+    void apply(const Tag& t) { add += t.add; }
 };
 
 struct Info {
     ll sum = 0, len = 1;
-    void apply(const Tag& t) { sum += t.tag * len; }
+    void apply(const Tag& t) { sum += t.add * len; }
 };
 Info operator+(const Info& a, const Info& b) {
     return Info(a.sum + b.sum, a.len + b.len);
@@ -146,9 +146,9 @@ void solve() {
             cin >> l >> r >> s >> d;
             l--, r--;
 
-            t.modify(l, Info(s));
+            t.rangeModify(l, l + 1, Tag(s));
             t.rangeModify(l + 1, r + 1, Tag(d));
-            t.modify(r + 1, Info(-(s + d * (r - l))));
+            t.rangeModify(r + 1, r + 2, Tag(-(s + d * (r - l))));
         } else {
             int q;
             cin >> q;
