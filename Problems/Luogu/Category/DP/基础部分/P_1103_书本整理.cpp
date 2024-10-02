@@ -3,7 +3,7 @@
 using namespace std;
 using ll = long long;
 
-constexpr int MOD = 1e9 + 7;
+static constexpr int MOD = 1e9 + 7;
 
 struct item {
     int h, w;
@@ -21,7 +21,7 @@ void solve() {
     }
     ranges::sort(vec, [&](const item& a, const item& b) { return a.h < b.h; });
 
-    vector<vector<int>> f(n + 1, vector<int>(n + 1, INT_MAX / 2));
+    vector f(n + 1, vector<int>(n + 1, INT_MAX / 2));
     for (int i = 1; i <= n; ++i) {
         f[i][1] = 0;
     }
@@ -43,7 +43,6 @@ void solve() {
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout.precision(20);
 
     solve();
 

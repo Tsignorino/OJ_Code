@@ -8,7 +8,8 @@ static constexpr int MOD = 1'000'000'007;
 void solve() {
     int n;
     cin >> n;
-    int a[n][n];
+
+    vector a(n, vector<int>(n));
     vector<int> rowSum(n), colSum(n);
     for (int i = 0; i < n; ++i) {
         int rs = 0;

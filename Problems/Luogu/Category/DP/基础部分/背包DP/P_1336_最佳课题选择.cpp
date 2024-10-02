@@ -3,10 +3,10 @@
 using namespace std;
 using ll = long long;
 
-constexpr int MOD = 1e9 + 7;
+static constexpr int MOD = 1e9 + 7;
 
-long long quickPow(long long a, long long b) {
-    long long res = 1;
+ll qpow(ll a, ll b) {
+    ll res = 1;
     for (; b; b >>= 1) {
         if (b & 1) {
             res = res * a;
@@ -19,6 +19,7 @@ long long quickPow(long long a, long long b) {
 void solve() {
     int n, m;
     cin >> n >> m;
+
     vector<int> a(m), b(m);
     for (int i = 0; i < m; ++i) {
         cin >> a[i] >> b[i];
@@ -29,7 +30,7 @@ void solve() {
     for (int i = 0; i < m; ++i) {
         for (int j = n; j >= 1; --j) {
             for (int k = 1; k <= j; ++k) {
-                f[j] = min(f[j], f[j - k] + a[i] * quickPow(k, b[i]));
+                f[j] = min(f[j], f[j - k] + a[i] * qpow(k, b[i]));
             }
         }
     }
@@ -39,7 +40,6 @@ void solve() {
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout.precision(20);
 
     solve();
 

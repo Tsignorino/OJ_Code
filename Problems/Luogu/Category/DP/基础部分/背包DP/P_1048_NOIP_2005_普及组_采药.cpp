@@ -3,22 +3,21 @@
 using namespace std;
 using ll = long long;
 
-/*
-    采药
-*/
+static constexpr int MOD = 1'000'000'007;
 
 void solve() {
     int t, n;
     cin >> t >> n;
+
     vector vec(n, vector<int>(2));
-    for (int i = 0; i < n; ++i) {
-        cin >> vec[i][0] >> vec[i][1];
+    for (auto& v : vec) {
+        cin >> v[0] >> v[1];
     }
 
     vector<int> dp(t + 1);
-    for (int i = 0; i < n; ++i) {
-        for (int j = t; j >= vec[i][0]; --j) {
-            dp[j] = max(dp[j], dp[j - vec[i][0]] + vec[i][1]);
+    for (auto& v : vec) {
+        for (int j = t; j >= v[0]; --j) {
+            dp[j] = max(dp[j], dp[j - v[0]] + v[1]);
         }
     }
     cout << dp[t] << "\n";
