@@ -4,13 +4,14 @@ using namespace std;
 using ll = long long;
 
 /*
-    ! 每个主件最多只有两个
+    ! 每个主件最多只有两个附件
 */
 
 void solve() {
     int m, n;
     cin >> m >> n;
-    vector<vector<pair<int, int>>> vec(n, vector<pair<int, int>>(2)); // ! 注意数据读入
+
+    vector vec(n, vector<pair<int, int>>(2));
     for (int i = 0; i < n; ++i) {
         int w, v, p;
         cin >> w >> v >> p;

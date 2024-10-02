@@ -10,11 +10,12 @@ struct Node {
 void solve() {
     int m, n;
     cin >> m >> n;
+
     vector<Node> vec(n);
     map<int, vector<pair<int, int>>> map;
     for (auto& [a, b, c] : vec) {
         cin >> a >> b >> c;
-        map[c].emplace_back(pair(a, b));
+        map[c].emplace_back(a, b);
     }
 
     vector<int> dp(m + 1);

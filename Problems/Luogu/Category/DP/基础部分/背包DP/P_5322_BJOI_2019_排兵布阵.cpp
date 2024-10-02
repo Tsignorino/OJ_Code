@@ -30,7 +30,6 @@ void solve() {
             }
         }
     }
-
     cout << ranges::max(dp) << "\n";
 }
 
