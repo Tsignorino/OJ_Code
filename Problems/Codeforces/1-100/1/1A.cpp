@@ -6,7 +6,6 @@ using ll = long long;
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout.tie(nullptr);
     
     ll n, m, a;
     cin >> n >> m >> a;
