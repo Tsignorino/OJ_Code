@@ -3,7 +3,7 @@
 using namespace std;
 using ll = long long;
 
-static constexpr int MOD = 1e9 + 7;
+static constexpr int MOD = 1'000'000'007;
 
 void solve() {
     ll a, b;
