@@ -3,9 +3,6 @@
 using namespace std;
 using ll = long long;
 
-/*
-    合唱队形：最长递增子序列
-*/
 void solve() {
     int n;
     cin >> n;
