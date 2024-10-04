@@ -8,6 +8,7 @@ static constexpr int MOD = 1e9 + 7;
 void solve() {
     int m;
     cin >> m;
+
     vector<int> vec(m);
     for (int& v : vec) {
         cin >> v;

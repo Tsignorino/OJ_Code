@@ -3,10 +3,6 @@
 using namespace std;
 using ll = long long;
 
-/*
-    守望者的逃离
-*/
-
 void solve() {
     int m, s, t;
     cin >> m >> s >> t;
@@ -24,9 +20,7 @@ void solve() {
     }
 
     for (int i = 1; i <= t; ++i) {
-        if (f[i] < f[i - 1] + 17) {
-            f[i] = f[i - 1] + 17;
-        }
+        f[i] = max(f[i], f[i - 1] + 17);
         if (f[i] >= s) {
             cout << "Yes\n" << i << "\n";
             return;

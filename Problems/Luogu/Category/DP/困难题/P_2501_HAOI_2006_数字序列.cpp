@@ -6,6 +6,7 @@ using ll = long long;
 void solve() {
     int n;
     cin >> n;
+
     vector<int> vec(n + 1);
     for (int i = 1; i <= n; ++i) {
         cin >> vec[i];
@@ -24,7 +25,7 @@ void solve() {
     vector<int> tmp; // 记录最长不下降子序列
     for (int i = 1; i <= n; ++i) {
         auto iter = ranges::upper_bound(tmp, res[i]);
-        int len = 0;
+        int len = -1;
         if (iter == tmp.end()) {
             tmp.emplace_back(res[i]);
             len = tmp.size();
@@ -46,7 +47,8 @@ void solve() {
     // dp[i] = min(dp[j] + cost(k))
     vector<ll> dp(n + 5, LLONG_MAX / 2);
     dp[0] = 0;
-    vector<ll> pre1(n + 2), pre2(n + 2); // 记录两个前缀和，用以计算 cost(k)
+
+    vector<ll> pre1(n + 2), pre2(n + 2);
     for (int i = 1; i <= n + 1; ++i) {
         for (int p = 0; p < f[record[i] - 1].size(); ++p) {
             int j = f[record[i] - 1][p];

@@ -8,7 +8,8 @@ static constexpr int MOD = 1e9 + 7;
 void solve() {
     string s;
     cin >> s;
-    int n = s.size();
+
+    const int n = s.size();
 
     vector dp(n + 1, vector<int>(n, INT_MAX / 2));
     for (int i = 0; i < n; ++i) {

@@ -3,13 +3,12 @@
 using namespace std;
 using ll = long long;
 
-/*
-    饥饿的奶牛：按右端点排序（根据二分过程）
-*/
+// 按右端点排序（根据二分过程）
 
 void solve() {
     int n;
     cin >> n;
+    
     vector<vector<int>> vec(n + 1, vector<int>(2));
     for (int i = 1; i <= n; ++i) {
         cin >> vec[i][0] >> vec[i][1];

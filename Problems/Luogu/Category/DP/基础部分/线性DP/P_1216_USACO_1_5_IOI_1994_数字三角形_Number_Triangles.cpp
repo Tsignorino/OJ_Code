@@ -3,9 +3,6 @@
 using namespace std;
 using ll = long long;
 
-/*
-    数字三角形
-*/
 void solve() {
     int n;
     cin >> n;

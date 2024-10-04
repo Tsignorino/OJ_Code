@@ -8,6 +8,7 @@ static constexpr int MOD = 1e9 + 7;
 void solve() {
     int n;
     cin >> n;
+
     vector<int> vec(n);
     for (int& v : vec) {
         cin >> v;
@@ -23,16 +24,6 @@ void solve() {
         isRoot[a] = 0;
     }
 
-    vector f(n, vector<int>(2));
-    function<void(int)> dfs = [&](int x) -> void {
-        f[x][0] = 0, f[x][1] = vec[x];
-        for (int& y : g[x]) {
-            dfs(y);
-            f[x][0] += max(f[y][0], f[y][1]);
-            f[x][1] += f[y][0];
-        }
-    };
-
     int mx = 0;
     int s = 0;
     for (int i = 0; i < n; ++i) {
@@ -41,7 +32,18 @@ void solve() {
             break;
         }
     }
-    dfs(s);
+
+    vector f(n, vector<int>(2));
+    auto dfs = [&](auto&& dfs, int x) -> void {
+        f[x][0] = 0, f[x][1] = vec[x];
+        for (int& y : g[x]) {
+            dfs(dfs, y);
+            f[x][0] += max(f[y][0], f[y][1]);
+            f[x][1] += f[y][0];
+        }
+    };
+    dfs(dfs, s);
+
     cout << max(f[s][0], f[s][1]) << "\n";
 }
 

@@ -8,6 +8,7 @@ static constexpr int MOD = 1e9 + 7;
 void solve() {
     int n;
     cin >> n;
+
     vector f(n + 2, vector<ll>(n + 1));
     vector root(n + 1, vector<int>(n + 1));
     for (int i = 1; i <= n; ++i) {
