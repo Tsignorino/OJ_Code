@@ -3,7 +3,7 @@
 using namespace std;
 using ll = long long;
 
-constexpr int MOD = 1e9 + 7;
+static constexpr int MOD = 1e9 + 7;
 
 struct Node {
     ll sum = 0, add = 0, mul = 1;
@@ -100,6 +100,7 @@ public:
 void solve() {
     int n, q, m;
     cin >> n >> q >> m;
+
     vector<int> vec(n + 1);
     for (int i = 1; i <= n; ++i) {
         cin >> vec[i];
@@ -110,6 +111,7 @@ void solve() {
     while (q--) {
         int Op, l, r;
         cin >> Op >> l >> r;
+
         if (Op == 1) {
             int k;
             cin >> k;

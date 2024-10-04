@@ -23,6 +23,7 @@ struct Node {
 void solve() {
     ll n;
     cin >> n;
+    
     vector<Rectangle> rec(n);
     vector<Line> lines;
     vector<ll> y;

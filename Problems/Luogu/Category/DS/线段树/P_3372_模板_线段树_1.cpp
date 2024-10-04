@@ -3,7 +3,7 @@
 using namespace std;
 using ll = long long;
 
-constexpr int MOD = 1e9 + 7;
+static constexpr int MOD = 1e9 + 7;
 
 static constexpr ll inf = 9e18;
 struct Tag {
@@ -90,15 +90,16 @@ public:
 };
 
 void solve() {
-    int n, m;
-    cin >> n >> m;
+    int n, q;
+    cin >> n >> q;
+
     vector<Info> vec(n + 1);
     for (int i = 1; i <= n; ++i) {
         cin >> vec[i].sum;
     }
 
     SegTree t(vec);
-    while (m--) {
+    while (q--) {
         int op;
         cin >> op;
         if (op == 1) {
