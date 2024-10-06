@@ -2,13 +2,23 @@
 
 
 
+
 ## 数学类
 
-> 范德蒙恒等式:  $\sum{\binom{n}{i} \cdot \binom{m}{i}} = \binom{n+m}{k}$
+#### 范德蒙恒等式:  $\sum{\binom{n}{i} \cdot \binom{m}{i}} = \binom{n+m}{k}$
 
 | Link                                        | Explanation            |
 | ------------------------------------------- | ---------------------- |
 | https://ac.nowcoder.com/acm/contest/89860/F | 利用公式减少了一层枚举 |
+
+
+
+#### GCD 问题
+
+| Link                                                  | Explanation          |
+| ----------------------------------------------------- | -------------------- |
+| https://leetcode.cn/problems/sorted-gcd-pair-queries/ | 倒序枚举，容斥，二分 |
+
 
 
 
