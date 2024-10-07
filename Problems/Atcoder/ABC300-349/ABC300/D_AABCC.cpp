@@ -4,6 +4,7 @@ using namespace std;
 using ll = long long;
 
 static constexpr int MOD = 1'000'000'007;
+
 static const int N = 1000000;
 // static const int N = 100;
 

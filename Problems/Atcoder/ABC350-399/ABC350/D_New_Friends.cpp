@@ -3,11 +3,12 @@
 using namespace std;
 using ll = long long;
 
-constexpr int mod = 1e9 + 7;
+static constexpr int mod = 1e9 + 7;
 
 void solve() {
     ll n, m;
     cin >> n >> m;
+    
     vector<int> pa(n + 1);
     vector<ll> g(n + 1);
     vector<ll> size(n + 1, 1);

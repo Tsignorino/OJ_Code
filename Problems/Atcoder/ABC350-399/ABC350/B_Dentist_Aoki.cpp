@@ -3,11 +3,12 @@
 using namespace std;
 using ll = long long;
 
-constexpr int mod = 1e9 + 7;
+static constexpr int mod = 1e9 + 7;
 
 void solve() {
     int n, k;
     cin >> n >> k;
+    
     map<int, int> mp;
     for (int i = 0; i < k; ++i) {
         int val;

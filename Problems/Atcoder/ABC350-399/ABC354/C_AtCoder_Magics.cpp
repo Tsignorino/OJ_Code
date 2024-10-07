@@ -3,7 +3,7 @@
 using namespace std;
 using ll = long long;
 
-constexpr int MOD = 1e9 + 7;
+static constexpr int mod = 1e9 + 7;
 
 struct Node {
     int a, c, i;
@@ -16,6 +16,7 @@ bool cmp(Node& n1, Node& n2) {
 void solve() {
     int n;
     cin >> n;
+    
     vector<Node> vec(n);
     for (int i = 0; i < n; ++i) {
         int a, c;
@@ -43,7 +44,6 @@ void solve() {
 signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout.precision(20);
 
     solve();
 

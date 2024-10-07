@@ -115,7 +115,6 @@ void solve_3() {
 signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout.precision(20);
 
     // solve_1();
     // solve_2();
