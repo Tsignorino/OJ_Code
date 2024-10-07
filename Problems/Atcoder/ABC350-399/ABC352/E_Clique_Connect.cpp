@@ -3,7 +3,7 @@
 using namespace std;
 using ll = long long;
 
-constexpr int MOD = 1e9 + 7;
+static constexpr int mod = 1e9 + 7;
 
 struct edge {
     int u, v, w;
@@ -15,6 +15,7 @@ void solve() {
 
     vector<int> pa(n + m + 1);
     iota(pa.begin(), pa.end(), 0);
+
     function<int(int)> find = [&](int x) -> int {
         return x == pa[x] ? x : pa[x] = find(pa[x]);
     };
@@ -51,9 +52,7 @@ void solve() {
 signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout.tie(nullptr);
-    cout.precision(20);
-
+    
     solve();
 
     return 0;

@@ -3,7 +3,7 @@
 using namespace std;
 using ll = long long;
 
-constexpr int MOD = 1e9 + 7;
+static constexpr int mod = 1e9 + 7;
 
 class ST {
 private:
@@ -34,6 +34,7 @@ public:
 void solve() {
     int n, k;
     cin >> n >> k;
+
     vector<int> id(n + 1);
     for (int i = 1; i <= n; ++i) {
         int v;
@@ -45,6 +46,7 @@ void solve() {
     st.init(id);
     ST st1(n + 1, [](int a, int b) { return min(a, b); });
     st1.init(id);
+
     int minV = INT_MAX;
     for (int l = 1, r = l + k - 1; r <= n; ++l, ++r) {
         minV = min(minV, st.query(l, r) - st1.query(l, r));
@@ -78,8 +80,6 @@ void mysolve() {
 signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout.tie(nullptr);
-    cout.precision(20);
 
     solve();
 

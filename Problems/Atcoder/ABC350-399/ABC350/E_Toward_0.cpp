@@ -3,7 +3,7 @@
 using namespace std;
 using ll = long long;
 
-constexpr int mod = 1e9 + 7;
+static constexpr int mod = 1e9 + 7;
 
 void solve() {
     ll n, k, a, b;
