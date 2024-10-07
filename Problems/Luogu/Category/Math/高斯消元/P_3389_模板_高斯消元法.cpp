@@ -66,6 +66,7 @@ pair<vector<double>, bool> gaussJordanElimination(vector<vector<int>>& A, vector
 void solve() {
     int n;
     cin >> n;
+
     vector A(n, vector<int>(n));
     vector<int> B(n);
     for (int i = 0; i < n; ++i) {
