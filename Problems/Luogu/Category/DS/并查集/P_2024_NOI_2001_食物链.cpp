@@ -3,15 +3,15 @@
 using namespace std;
 using ll = long long;
 
-constexpr int MOD = 1e9 + 7;
-
-/*
-    种类并查集
-*/
+static constexpr int MOD = 1e9 + 7;
 
 void solve() {
     int n, m;
     cin >> n >> m;
+
+    /*
+        种类并查集
+    */
     vector<int> pa(3 * n);
     iota(pa.begin(), pa.end(), 0);
 
@@ -47,7 +47,6 @@ void solve() {
             }
         }
     }
-
     cout << ans << "\n";
 }
 

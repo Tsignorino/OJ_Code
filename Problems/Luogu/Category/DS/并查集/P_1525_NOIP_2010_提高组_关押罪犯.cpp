@@ -3,15 +3,11 @@
 using namespace std;
 using ll = long long;
 
-constexpr int MOD = 1e9 + 7;
+static constexpr int MOD = 1e9 + 7;
 
 struct Node {
     int a, b, val;
 };
-
-/*
-    贪心 + 并查集
-*/
 
 void solve() {
     int n, m;

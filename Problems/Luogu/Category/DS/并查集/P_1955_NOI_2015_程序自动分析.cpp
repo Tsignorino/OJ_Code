@@ -3,7 +3,7 @@
 using namespace std;
 using ll = long long;
 
-constexpr int MOD = 1e9 + 7;
+static constexpr int MOD = 1e9 + 7;
 
 struct T {
     int x, y, e;
@@ -12,6 +12,7 @@ struct T {
 void solve() {
     int n;
     cin >> n;
+
     vector<T> vec(n);
     vector<int> tmp;
     for (auto& [x, y, e] : vec) {
@@ -51,7 +52,6 @@ void solve() {
             }
         }
     }
-
     cout << "YES\n";
 }
 
