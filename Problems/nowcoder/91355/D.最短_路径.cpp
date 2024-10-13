@@ -43,7 +43,7 @@ void solve() {
         }
         st[x][i] = 1;
 
-        for (auto y : g[x]) {
+        for (int y : g[x]) {
             if (dis[y][0] > vec[y] + w) { // 休息
                 dis[y][0] = vec[y] + w;
                 q.emplace(dis[y][0], y, 0);
