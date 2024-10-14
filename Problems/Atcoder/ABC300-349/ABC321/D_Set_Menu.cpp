@@ -5,8 +5,6 @@ using ll = long long;
 
 static constexpr int MOD = 1'000'000'007;
 
-// #include "_debug.h"
-
 void solve() {
     int n, m, p;
     cin >> n >> m >> p;
@@ -19,22 +17,17 @@ void solve() {
         cin >> v;
     }
 
-    ranges::sort(s);
     ranges::sort(t);
 
-    vector<ll> pre(n + 1);
-    for (int i = 0; i < n; ++i) {
-        pre[i + 1] = pre[i] + s[i];
+    vector<ll> pre(m + 1);
+    for (int i = 0; i < m; ++i) {
+        pre[i + 1] = pre[i] + t[i];
     }
 
-    // debug(s);
-    // debug(t);
-    // debug(pre);
-
     ll ans = 0;
-    for (int i = 0; i < m; ++i) {
-        int cnt = ranges::lower_bound(s, p - t[i]) - s.begin();
-        ans += pre[cnt] + t[i] * 1ll * cnt + p * 1ll * (n - cnt);
+    for (int i = 0; i < n; ++i) {
+        int cnt = ranges::lower_bound(t, p - s[i]) - t.begin();
+        ans += pre[cnt] + s[i] * 1ll * cnt + p * 1ll * (m - cnt);
     }
     cout << ans << "\n";
 }

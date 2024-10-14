@@ -9,37 +9,37 @@ void solve() {
     int n, m, k;
     cin >> n >> m >> k;
 
-    if (n < m) {
-        cout << 0 << "\n";
-        return;
-    }
-
-    vector<int> a(n), b(m);
-    map<int, int> cnt;
+    vector<int> a(n);
     for (int& v : a) {
         cin >> v;
     }
+
+    vector<int> b(m);
+    map<int, int> cnt;
     for (int& v : b) {
         cin >> v;
         cnt[v]++;
     }
 
-    map<int, int> cnt1;
-    int l = 0, r = 0;
-    ll res = 0;
-    for (; r < m; ++r) {
-        res += cnt1[a[r]] < cnt[a[r]];
-        cnt1[a[r]]++;
-    }
-    ll ans = res >= k;
-    for (; r < n; ++r) {
-        res += cnt1[a[r]] < cnt[a[r]];
-        cnt1[a[r]]++;
+    int ans = 0, c = 0;
+    for (int r = 0; r < n; ++r) {
+        if (cnt[a[r]] > 0) {
+            c++;
+        }
+        cnt[a[r]]--;
 
-        res -= cnt1[a[l]] <= cnt[a[l]];
-        cnt1[a[l++]]--;
+        int l = r + 1 - m;
+        if (l < 0) {
+            continue;
+        }
 
-        ans += res >= k;
+        if (c >= k) {
+            ans++;
+        }
+
+        if (++cnt[a[l]] > 0) {
+            c--;
+        }
     }
     cout << ans << "\n";
 }
