@@ -9,11 +9,6 @@ void solve() {
     int n;
     cin >> n;
 
-    /*
-        1≤N≤100
-        1≤Di≤100 (1≤i≤N)
-    */
-
     int ans = 0;
     for (int i = 1; i <= n; ++i) {
         int v;

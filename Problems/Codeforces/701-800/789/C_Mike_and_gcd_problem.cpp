@@ -18,6 +18,7 @@ static constexpr int MOD = 1'000'000'007;
 void solve() {
     int n;
     cin >> n;
+
     vector<int> vec(n);
     int g = 0;
     for (int& v : vec) {

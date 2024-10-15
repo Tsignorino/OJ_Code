@@ -3,6 +3,8 @@
 using namespace std;
 using ll = long long;
 
+static constexpr int MOD = 1'000'000'007;
+
 void solve() {
     vector vec(3, vector<int>(2));
     for (int i = 0; i < 3; ++i) {

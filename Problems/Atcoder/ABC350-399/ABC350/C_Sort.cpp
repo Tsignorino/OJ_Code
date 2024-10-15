@@ -8,7 +8,7 @@ static constexpr int mod = 1e9 + 7;
 void solve() {
     int n;
     cin >> n;
-    
+
     vector<int> vec(n);
     vector<int> ids(n + 1);
     for (int i = 0; i < n; ++i) {
@@ -35,7 +35,7 @@ void solve() {
     }
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 

@@ -9,6 +9,7 @@ void solve() {
     int n;
     ll k1, k2;
     cin >> n >> k1 >> k2;
+
     vector<int> a(n), b(n);
     for (int& v : a) {
         cin >> v;

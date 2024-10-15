@@ -3,13 +3,15 @@
 using namespace std;
 using ll = long long;
 
-constexpr int mod = 1e9 + 7;
+static constexpr int MOD = 1'000'000'007;
 
 void solve() {
-    set<string> set;
     string s;
     cin >> s;
+
     int n = s.size();
+
+    set<string> set;
     for (int l = 1; l <= n; ++l) {
         for (int i = 0; i < n; ++i) {
             set.insert(s.substr(i, l));
@@ -19,7 +21,7 @@ void solve() {
     cout << set.size() << "\n";
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 

@@ -20,7 +20,7 @@ void solve() {
     cout << vec[sum % n].first << "\n";
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 

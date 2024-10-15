@@ -3,11 +3,12 @@
 using namespace std;
 using ll = long long;
 
-constexpr int MOD = 1e9 + 7;
+static constexpr int MOD = 1'000'000'007;
 
 void solve() {
     int n;
     cin >> n;
+
     vector<int> a(n), w(n);
     for (int& v : a) {
         cin >> v;

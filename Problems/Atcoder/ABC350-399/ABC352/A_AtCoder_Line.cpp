@@ -12,7 +12,7 @@ void solve() {
     cout << ((z - x) * (z - y) <= 0 ? "Yes" : "No") << "\n";
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 

@@ -18,7 +18,7 @@ void solve() {
     cout << (cnt == 3 || cnt == 2 && t[2] == 'X' ? "Yes" : "No") << "\n";
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 

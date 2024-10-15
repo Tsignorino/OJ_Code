@@ -2,7 +2,6 @@
 
 using namespace std;
 using ll = long long;
-using ull = unsigned long long;
 
 static constexpr int MOD = 1e9 + 7;
 

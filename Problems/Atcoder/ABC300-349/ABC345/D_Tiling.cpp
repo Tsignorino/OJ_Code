@@ -3,7 +3,7 @@
 using namespace std;
 using ll = long long;
 
-constexpr int mod = 1e9 + 7;
+static constexpr int MOD = 1'000'000'007;
 
 void solve() {
     int n, h, w;
@@ -28,7 +28,7 @@ void solve() {
         if (f[x][y]) {
             return self(self, x, y + 1);
         }
-        
+
         for (int i = 0; i < n; i++) {
             if (!vis[i]) {
                 vis[i] = 1;
@@ -67,7 +67,7 @@ void solve() {
     cout << "No\n";
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 

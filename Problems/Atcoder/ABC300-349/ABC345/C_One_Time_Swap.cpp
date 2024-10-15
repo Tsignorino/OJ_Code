@@ -3,9 +3,9 @@
 using namespace std;
 using ll = long long;
 
-constexpr int mod = 1e9 + 7;
+static constexpr int MOD = 1'000'000'007;
 
-void solve_1() {
+void solve() {
     string s;
     cin >> s;
 
@@ -27,68 +27,11 @@ void solve_1() {
     cout << ans << "\n";
 }
 
-void solve_2() {
-    string s;
-    cin >> s;
-
-    unordered_map<char, int> ump;
-    for (char& v : s) {
-        ump[v]++;
-    }
-
-    int n = s.size(), m = ump.size();
-    ll ans = 0;
-    for (int i = 0; i < n; ++i) {
-        ans += n - i - ump[s[i]];
-
-        ump[s[i]]--;
-        if (ump[s[i]] == 0) {
-            ump.erase(s[i]);
-        }
-    }
-
-    if (s.size() > m) {
-        ans++;
-    }
-
-    cout << ans << "\n";
-}
-
-void solve() {
-    string s;
-    cin >> s;
-
-    unordered_map<char, int> ump;
-    for (char& v : s) {
-        ump[v]++;
-    }
-
-    int n = s.size();
-    ll ans = 0;
-    for (int i = 0; i < n; ++i) {
-        ans += n - i - ump[s[i]];
-
-        ump[s[i]]--;
-        if (ump[s[i]] == 0) {
-            ump.erase(s[i]);
-        }
-    }
-
-    sort(s.begin(), s.end());
-    auto iter = unique(s.begin(), s.end());
-    s.erase(iter, s.end());
-    if (s.size() < n) {
-        ans++;
-    }
-
-    cout << ans << "\n";
-}
-
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    solve_2();
+    solve();
 
     return 0;
 }

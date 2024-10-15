@@ -9,7 +9,6 @@ void solve() {
     int a, b;
     cin >> a >> b;
 
-    // cout << (a == b ? -1 : 6 - a - b) << "\n";
     cout << (a == b ? -1 : a ^ b) << "\n";
 }
 

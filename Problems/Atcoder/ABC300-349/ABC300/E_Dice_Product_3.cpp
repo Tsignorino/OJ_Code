@@ -106,7 +106,6 @@ void solve() {
         if (x == 1) {
             return 1;
         }
-
         if (memo.contains(x)) {
             return memo[x];
         }

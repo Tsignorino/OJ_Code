@@ -8,19 +8,19 @@ static constexpr int MOD = 1'000'000'007;
 void solve() {
     int n;
     cin >> n;
+
     vector<int> vec(n);
     for (int& v : vec) {
         cin >> v;
     }
 
-    vector<int> res(n);
-
-    vector<int> pa(n + 1); // !
+    vector<int> pa(n + 1);
     iota(pa.begin(), pa.end(), 0);
     function<int(int)> find = [&](int x) -> int {
-        return pa[x] == x ? x : pa[x] = find(pa[x]); // !
+        return pa[x] == x ? x : pa[x] = find(pa[x]);
     };
 
+    vector<int> res(n);
     int cnt;
     cin >> cnt;
     while (cnt--) {
@@ -35,19 +35,19 @@ void solve() {
 
         int val;
         cin >> val;
-        for (id = find(id); id < n; id = find(id)) { // !
+        for (id = find(id); id < n; id = find(id)) {
             if (res[id] + val < vec[id]) {
                 res[id] += val;
                 break;
             }
             val -= vec[id] - res[id];
             res[id] = vec[id];
-            pa[id] = id + 1; // !
+            pa[id] = id + 1;
         }
     }
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 

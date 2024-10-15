@@ -9,6 +9,7 @@ void solve() {
     int n, m, x, y;
     cin >> n >> m >> x >> y;
     x--, y--;
+
     vector<string> vec(n);
     for (string& s : vec) {
         cin >> s;

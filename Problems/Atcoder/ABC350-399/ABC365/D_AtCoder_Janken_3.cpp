@@ -2,14 +2,15 @@
 
 using namespace std;
 using ll = long long;
-using ull = unsigned long long;
 
 static constexpr int MOD = 1e9 + 7;
 
 void solve() {
     int n;
+    cin >> n;
+
     string s;
-    cin >> n >> s;
+    cin >> s;
     s.insert(s.begin(), '.');
 
     vector<vector<int>> dp(n + 1, vector<int>(3));

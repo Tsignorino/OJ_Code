@@ -8,7 +8,8 @@ static constexpr int MOD = 1'000'000'007;
 void solve() {
     int n, k;
     cin >> n >> k;
-    int a[n];
+
+    vector<int> a(n);
     for (int i = 0; i < n; ++i) {
         cin >> a[i];
     }
@@ -21,7 +22,7 @@ void solve() {
     cout << cnt << "\n";
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 

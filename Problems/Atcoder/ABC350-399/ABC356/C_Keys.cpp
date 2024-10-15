@@ -40,46 +40,6 @@ void solve_() {
     cout << ans << "\n";
 }
 
-void solve() {
-    int n, m, x;
-    cin >> n >> m >> x;
-
-    vector<vector<int>> vec(m);
-    vector<char> str(m, ' ');
-    for (int i = 0; i < m; ++i) {
-        int c;
-        cin >> c;
-        while (c--) {
-            int v;
-            cin >> v;
-            vec[i].emplace_back(v);
-        }
-        cin >> str[i];
-    }
-
-    int k = 0;
-    int ans = 0;
-    do {
-        bool flag = true;
-        for (int i = 0; i < m; ++i) {
-            int cnt = 0;
-            for (int& v : vec[i]) {
-                cnt += (k >> (v - 1)) & 1;
-            }
-
-            if (cnt >= x && str[i] == 'x' || cnt < x && str[i] == 'o') {
-                flag = false;
-                break;
-            }
-        }
-        if (flag) {
-            ans++;
-        }
-    } while (k++ < (2 << (n - 1)) - 1);
-
-    cout << ans << "\n";
-}
-
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);

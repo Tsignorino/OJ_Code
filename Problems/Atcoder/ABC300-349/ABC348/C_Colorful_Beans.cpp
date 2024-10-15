@@ -8,7 +8,7 @@ static constexpr int mod = 1e9 + 7;
 void solve() {
     int n;
     cin >> n;
-    
+
     map<int, int> mp;
     for (int i = 0; i < n; ++i) {
         int a, b;
@@ -27,7 +27,7 @@ void solve() {
     cout << ans << "\n";
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 

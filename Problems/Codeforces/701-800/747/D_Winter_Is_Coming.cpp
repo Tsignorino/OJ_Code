@@ -38,6 +38,7 @@ void solve() {
     }
 
     ranges::sort(gap);
+
     for (int& v : gap) {
         if (k < v) {
             break;
@@ -45,6 +46,7 @@ void solve() {
         k -= v;
         ans -= 2;
     }
+
     ans -= cnt > 0 && cnt <= k; // keep winter tires
     cout << ans << "\n";
 }

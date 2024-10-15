@@ -12,7 +12,7 @@ void solve() {
     cout << __lg(n + 1) + 1 << "\n";
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 

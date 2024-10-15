@@ -3,6 +3,8 @@
 using namespace std;
 using ll = long long;
 
+static constexpr int MOD = 1'000'000'007;
+
 struct edge {
     int to;
     ll w;

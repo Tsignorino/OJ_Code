@@ -13,7 +13,7 @@ void solve() {
     cout << (num >= 1 && num <= 349 && num != 316 ? "Yes" : "No") << "\n";
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 

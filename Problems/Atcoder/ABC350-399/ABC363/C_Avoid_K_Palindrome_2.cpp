@@ -8,8 +8,10 @@ static constexpr int MOD = 1e9 + 7;
 void solve() {
     int n, k;
     cin >> n >> k;
+
     string s;
     cin >> s;
+    
     ranges::sort(s);
 
     int cnt = 0;

@@ -2,13 +2,13 @@
 
 using namespace std;
 using ll = long long;
-using ull = unsigned long long;
 
 static constexpr int MOD = 1e9 + 7;
 
 void solve() {
     int n;
     cin >> n;
+
     vector<pair<int, int>> vec(n);
     for (int i = 0; i < n; ++i) {
         cin >> vec[i].first;
