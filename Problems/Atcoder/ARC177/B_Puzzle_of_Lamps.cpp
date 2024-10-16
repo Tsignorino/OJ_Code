@@ -3,13 +3,12 @@
 using namespace std;
 using ll = long long;
 
-constexpr int MOD = 1e9 + 7;
+static constexpr int MOD = 1e9 + 7;
 
 void solve() {
     int n;
-    cin >> n;
     string s;
-    cin >> s;
+    cin >> n >> s;
 
     int ans = 0;
     string t;
@@ -23,11 +22,9 @@ void solve() {
     cout << ans << "\n" << t << "\n";
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout.tie(nullptr);
-    cout.precision(20);
 
     solve();
 

@@ -3,13 +3,14 @@
 using namespace std;
 using ll = long long;
 
-constexpr int MOD = 1e9 + 7;
+static constexpr int MOD = 1e9 + 7;
 
 void solve() {
     vector<int> vec(6);
     for (int& v : vec) {
         cin >> v;
     }
+
     ranges::reverse(vec);
 
     int n;
@@ -40,11 +41,9 @@ void solve() {
     cout << (flag ? "Yes" : "No") << "\n";
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout.tie(nullptr);
-    cout.precision(20);
 
     solve();
 
