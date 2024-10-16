@@ -14,22 +14,10 @@ void solve() {
         cin >> v;
     }
 
-    auto check = [&](auto x) {
-        
-        return true;
-    };
+    ll sum = accumulate(vec.begin(), vec.end(), 0ll);
+    ll mx = ranges::max(vec);
 
-    ll l = 0, r = 1e15;
-    while (l + 1 < r) {
-        auto mid = l + (r - l) / 2;
-
-        if (check(mid)) {
-            r = mid;
-        } else {
-            l = mid;
-        }
-    }
-    cout << r << "\n";
+    cout << max((sum + x - 1) / x, mx) << "\n";
 }
 
 int main() {
