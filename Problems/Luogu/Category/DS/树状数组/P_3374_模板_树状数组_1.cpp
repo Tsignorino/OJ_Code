@@ -3,7 +3,7 @@
 using namespace std;
 using ll = long long;
 
-constexpr int MOD = 1e9 + 7;
+static constexpr int MOD = 1e9 + 7;
 
 class Fenwick {
     int initVal = 0;
@@ -38,34 +38,27 @@ public:
 void solve() {
     int n, m;
     cin >> n >> m;
-    Fenwick f(n + 2);
-    for (int i = 1; i <= n; ++i) {
-        int v;
+
+    vector<int> vec(n);
+    for (int& v : vec) {
         cin >> v;
-        f.update(i, v);
-        f.update(i + 1, -v);
     }
 
+    Fenwick f(vec);
     while (m--) {
-        int op;
-        cin >> op;
+        int op, a, b;
+        cin >> op >> a >> b;
         if (op == 1) {
-            int l, r, val;
-            cin >> l >> r >> val;
-            f.update(l, val);
-            f.update(r + 1, -val);
+            f.update(a, b);
         } else {
-            int id;
-            cin >> id;
-            cout << f.preSum(id) << "\n";
+            cout << f.rangeSum(a, b) << "\n";
         }
     }
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout.precision(20);
 
     solve();
 

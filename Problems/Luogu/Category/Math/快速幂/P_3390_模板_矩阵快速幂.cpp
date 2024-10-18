@@ -41,6 +41,7 @@ void solve() {
     int n;
     ll k;
     cin >> n >> k;
+
     vector a(n, vector<ll>(n));
     for (auto& row : a) {
         for (auto& v : row) {

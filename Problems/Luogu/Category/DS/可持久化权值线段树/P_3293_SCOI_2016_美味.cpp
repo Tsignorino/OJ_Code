@@ -6,11 +6,11 @@ using ll = long long;
 static constexpr int MOD = 1e9 + 7;
 
 /*
-贪心：b ^ (a + x)
+    贪心：b ^ (a + x)
 
-考虑从高位到低位贪心：
-    初始 ans = 0，
-    如果 b 的某一位为 0，那么希望 a+x 对应位为 1，搜索范围为 [ans + (1 << j), ans + (1 << (j+1)) - 1]，否则为 [ans, ans + (1 << j) - 1]
+    考虑从高位到低位贪心：
+        初始 ans = 0，
+        如果 b 的某一位为 0，那么希望 a+x 对应位为 1，搜索范围为 [ans + (1 << j), ans + (1 << (j+1)) - 1]，否则为 [ans, ans + (1 << j) - 1]
 */
 
 struct Node {

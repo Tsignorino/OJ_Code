@@ -3,16 +3,16 @@
 using namespace std;
 using ll = long long;
 
-constexpr int MOD = 1e9 + 7;
+static constexpr int MOD = 1e9 + 7;
 
 struct Guard {
     int id, l, r;
 };
 
-//! 每名边防战士的奔袭区间都不会被其他边防战士的奔袭区间所包含
 void solve() {
     int n, m;
     cin >> n >> m;
+
     vector<Guard> vec(n * 2);
     for (int i = 0; i < n; ++i) {
         int l, r;
@@ -24,7 +24,6 @@ void solve() {
         vec[i + n] = Guard(i, l + m, r + m); // 复制
     }
 
-    //! 注意排序操作与复制操作的影响
     ranges::sort(vec, [&](const Guard& a, const Guard& b) { return a.l < b.l; });
 
     // 倍增，预处理（从一名战士开始，直到另一名战士的左端点大于该战士的右端点）
@@ -54,7 +53,7 @@ void solve() {
                 cur = next;
             }
         }
-        ans[vec[i].id] = res + 1; //! 注意编号
+        ans[vec[i].id] = res + 1; // 注意编号
     }
 
     for (int& v : ans) {
@@ -62,11 +61,9 @@ void solve() {
     }
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout.tie(nullptr);
-    cout.precision(20);
 
     solve();
 

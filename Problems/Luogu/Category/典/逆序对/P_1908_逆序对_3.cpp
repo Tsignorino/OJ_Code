@@ -6,10 +6,6 @@ using ll = long long;
 static constexpr int MOD = 1e9 + 7;
 
 /*
-    权值线段树求逆序对
-*/
-
-/*
     权值线段树基于值域划分，往往需要离散化。
 
     作用: 求一段区间的某个数字的出现次数;
@@ -113,6 +109,7 @@ public:
 void solve() {
     int n;
     cin >> n;
+
     vector<int> vec(n);
     for (int& v : vec) {
         cin >> v;

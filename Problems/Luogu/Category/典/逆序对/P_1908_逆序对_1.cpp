@@ -3,15 +3,12 @@
 using namespace std;
 using ll = long long;
 
-constexpr int MOD = 1e9 + 7;
-
-/*
-    归并排序求逆序对
-*/
+static constexpr int MOD = 1e9 + 7;
 
 void solve() {
     int n;
     cin >> n;
+
     vector<int> vec(n);
     for (int& v : vec) {
         cin >> v;
@@ -48,13 +45,13 @@ void solve() {
     };
 
     mergeSort(0, n - 1);
+
     cout << ans << "\n";
 }
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout.precision(20);
 
     solve();
 

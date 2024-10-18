@@ -3,7 +3,7 @@
 using namespace std;
 using ll = long long;
 
-constexpr int MOD = 1e9 + 7;
+static constexpr int MOD = 1e8 - 3;
 
 class Fenwick {
     int initVal = 0;
@@ -18,7 +18,7 @@ public:
         }
     }
 
-    void update(int id, int val) { // a[i] += val, 1<=i<=n
+    void update(int id, int val) {
         for (int i = id; i <= f.size(); i += i & -i) {
             f[i] = Op(f[i], val);
         }
@@ -27,7 +27,7 @@ public:
     int preSum(int id) { // [1, id]
         int res = initVal;
         for (int i = id; i > 0; i &= i - 1) { // i -= i & -i
-            res = Op(res, f[i]);
+            res += f[i];
         }
         return res;
     }
@@ -36,29 +36,49 @@ public:
 };
 
 void solve() {
-    int n, m;
-    cin >> n >> m;
-    vector<int> vec(n);
-    for (int& v : vec) {
+    int n;
+    cin >> n;
+
+    vector<int> v1(n), v2(n);
+    for (int& v : v1) {
+        cin >> v;
+    }
+    for (int& v : v2) {
         cin >> v;
     }
 
-    Fenwick f(vec);
-    while (m--) {
-        int op, a, b;
-        cin >> op >> a >> b;
-        if (op == 1) {
-            f.update(a, b);
-        } else {
-            cout << f.rangeSum(a, b) << "\n";
-        }
+    vector<int> tmp = v1;
+    ranges::sort(tmp);
+    for (int& v : v1) {
+        v = ranges::lower_bound(tmp, v) - tmp.begin();
     }
+
+    // 将 v1 离散化的结果作为标准
+    vector<int> idx(n);
+    for (int i = 0; i < n; ++i) {
+        idx[v1[i]] = i;
+    }
+
+    tmp = v2;
+    ranges::sort(tmp);
+    for (int& v : v2) {
+        v = idx[ranges::lower_bound(tmp, v) - tmp.begin()];
+    }
+
+    // 求 v2 的逆序对
+    Fenwick f(n);
+    ll ans = 0;
+    for (int i = 0; i < n; ++i) {
+        f.update(v2[i] + 1, 1);
+        ans += i + 1 - f.preSum(v2[i] + 1);
+        ans %= MOD;
+    }
+    cout << ans << "\n";
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout.precision(20);
 
     solve();
 

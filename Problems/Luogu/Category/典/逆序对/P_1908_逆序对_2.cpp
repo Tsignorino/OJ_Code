@@ -3,15 +3,12 @@
 using namespace std;
 using ll = long long;
 
-constexpr int MOD = 1e9 + 7;
-
-/*
-    树状数组求逆序对
-*/
+static constexpr int MOD = 1e9 + 7;
 
 void solve() {
     int n;
     cin >> n;
+
     vector<int> vec(n);
     for (int& v : vec) {
         cin >> v;
@@ -43,7 +40,6 @@ void solve() {
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout.precision(20);
 
     solve();
 

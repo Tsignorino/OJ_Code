@@ -12,6 +12,7 @@ struct Node {
 void solve() {
     int n, m;
     cin >> n >> m;
+
     vector<Node> vec(m);
     for (auto& v : vec) {
         cin >> v.a >> v.b >> v.val;

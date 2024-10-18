@@ -3,7 +3,7 @@
 using namespace std;
 using ll = long long;
 
-constexpr int MOD = 1e9 + 7;
+static constexpr int MOD = 1e9 + 7;
 
 class Fenwick {
 private:
@@ -35,9 +35,9 @@ public:
     int rangeSum(int l, int r) { return preSum(r) - preSum(l - 1); } // [l, r]
 };
 /*
-   1
-  2 3
- 4   5
+      1
+     2 3
+    4   5
 
     寻找比 x 强的下属 = 添加下属之后比 x 强的 - 添加下属之前就比 x 强的
 */
@@ -45,6 +45,7 @@ public:
 void solve() {
     int n;
     cin >> n;
+
     vector<int> vec(n + 1);
     for (int i = 1; i <= n; ++i) {
         cin >> vec[i];
