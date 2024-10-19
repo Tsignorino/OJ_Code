@@ -8,6 +8,7 @@
             "args": [
                 "--std=c++26",
                 "-g",
+                "-DLOCAL",
                 "-ID:/Code/OJ_Code",
                 // "-Wall",
                 "-o",

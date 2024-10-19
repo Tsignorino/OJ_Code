@@ -4,8 +4,4 @@
 build/
 test/
 
-_debug.h
-*.ps1
-*.bat
-
 todo.md

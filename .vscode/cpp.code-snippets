@@ -4,6 +4,10 @@
 		"body": [
 			"#include <bits/stdc++.h>",
 			"",
+			"#ifdef LOCAL",
+			"#include \"debug.h\"",
+			"#endif",
+			"",
 			"using namespace std;",
 			"using ll = long long;",
 			"",
@@ -21,13 +25,16 @@
 			"",
 			"    return 0;",
 			"}"
-		],
-		"description": "acm"
+		]
 	},
 	"acms": {
 		"prefix": "acms",
 		"body": [
 			"#include <bits/stdc++.h>",
+			"",
+			"#ifdef LOCAL",
+			"#include \"debug.h\"",
+			"#endif",
 			"",
 			"using namespace std;",
 			"using ll = long long;",
@@ -35,7 +42,7 @@
 			"static constexpr int MOD = 1'000'000'007;",
 			"",
 			"void solve() {",
-			"    ",
+			"",
 			"}",
 			"",
 			"int main() {",
@@ -50,7 +57,6 @@
 			"",
 			"    return 0;",
 			"}"
-		],
-		"description": "acms"
+		]
 	}
 }
