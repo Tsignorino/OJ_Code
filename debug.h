@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
 
+// https://github.com/Heltion/debug.h
+
 template <class T, size_t size = std::tuple_size<T>::value>
 std::string to_debug(T, std::string s = "")
     requires(!std::ranges::range<T>);
