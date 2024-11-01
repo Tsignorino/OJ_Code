@@ -1,0 +1,24 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "C++",
+            "command": "clang++",
+            "args": [
+                "--std=c++26",
+                "-g",
+                "-DLOCAL",
+                "-ID:/Code/OJ_Code",
+                // "-Wall",
+                "-o",
+                "${workspaceFolder}/build/${fileBasenameNoExtension}.exe",
+                "${file}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+        }
+    ]
+}

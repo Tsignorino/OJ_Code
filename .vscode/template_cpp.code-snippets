@@ -1,0 +1,83 @@
+{
+    "solcpp": {
+        "prefix": "sol",
+        "body": [
+            "#include <bits/stdc++.h>",
+            "",
+            "#include \"debug.h\"",
+            "",
+            "using namespace std;",
+            "using ll = long long;",
+            "",
+            "static constexpr int MOD = 1'000'000'007;",
+            "",
+            "$1",
+            "",
+            "int main() {",
+            "    Solution sol;",
+            "",
+            "    return 0;",
+            "}"
+        ]
+    },
+    "acm": {
+        "prefix": "acm",
+        "body": [
+            "#include <bits/stdc++.h>",
+            "",
+            "#ifdef LOCAL",
+            "#include \"debug.h\"",
+            "#endif",
+            "",
+            "using namespace std;",
+            "using ll = long long;",
+            "",
+            "static constexpr int MOD = 1'000'000'007;",
+            "",
+            "void solve() {",
+            "    ",
+            "}",
+            "",
+            "int main() {",
+            "    ios::sync_with_stdio(false);",
+            "    cin.tie(nullptr);",
+            "",
+            "    solve();",
+            "",
+            "    return 0;",
+            "}"
+        ]
+    },
+    "acms": {
+        "prefix": "acms",
+        "body": [
+            "#include <bits/stdc++.h>",
+            "",
+            "#ifdef LOCAL",
+            "#include \"debug.h\"",
+            "#endif",
+            "",
+            "using namespace std;",
+            "using ll = long long;",
+            "",
+            "static constexpr int MOD = 1'000'000'007;",
+            "",
+            "void solve() {",
+            "    ",
+            "}",
+            "",
+            "int main() {",
+            "    ios::sync_with_stdio(false);",
+            "    cin.tie(nullptr);",
+            "",
+            "    int T;",
+            "    cin >> T;",
+            "    while (T--) {",
+            "        solve();",
+            "    }",
+            "",
+            "    return 0;",
+            "}"
+        ]
+    }
+}

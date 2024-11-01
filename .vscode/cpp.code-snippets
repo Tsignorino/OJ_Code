@@ -1,0 +1,104 @@
+{
+    "二分查找": {
+        "prefix": "binary_search",
+        "body": [
+            "auto check = [&](auto x) {",
+            "    $1",
+            "    return true;",
+            "};",
+            "",
+            "int lo = 0, hi = 1e9;",
+            "while (lo + 1 < hi) {",
+            "    auto mid = lo + (hi - lo) / 2;",
+            "",
+            "    if (check(mid)) {",
+            "",
+            "    } else {",
+            "        ",
+            "    }",
+            "}"
+        ]
+    },
+    "上下左右": {
+        "prefix": "dir",
+        "body": [
+            "static constexpr int dir[4][2] = {{-1,0},{0,-1},{1,0},{0,1},};"
+        ]
+    },
+    "马": {
+        "prefix": "dir_horse",
+        "body": [
+            "static constexpr int dir[8][2] = {{1,2},{1,-2},{2,1},{2,-1},{-1,2},{-1,-2},{-2,1},{-2,-1},};"
+        ]
+    },
+    "周围": {
+        "prefix": "dir_around",
+        "body": [
+            "static constexpr int dir[8][2] = {{1,0},{0,1},{-1,0},{0,-1},{1,1},{1,-1},{-1,1},{-1,-1},};"
+        ]
+    },
+    "四角": {
+        "prefix": "dir_corner",
+        "body": [
+            "static constexpr int dir[4][2] = {{-1,1},{-1,-1},{1,-1},{1,1},};"
+        ]
+    },
+    "区间合并": {
+        "prefix": "intervalsMerge",
+        "body": [
+            "vector<pair<int, int>> ans;",
+            "for (auto& p : vec) {",
+            "    if (!ans.empty() && p.first <= ans.back().second) {",
+            "        ans.back().second = max(ans.back().second, p.second);",
+            "    } else {",
+            "        ans.emplace_back(p);",
+            "    }",
+            "}"
+        ]
+    },
+    "dfs": {
+        "prefix": "dfs",
+        "body": [
+            "auto dfs = [&](auto&& dfs, $1) {",
+            "    ",
+            "};",
+            "dfs(dfs);"
+        ]
+    },
+    "dfs23": {
+        "prefix": "dfs23",
+        "body": [
+            "auto dfs = [&](this auto&& dfs, $1) {",
+            "    ",
+            "};",
+            "dfs();"
+        ]
+    },
+    "prefix": {
+        "prefix": "prefix",
+        "body": [
+            "vector<ll> pre(n + 1);",
+            "for (int i = 0; i < n; ++i) {",
+            "    pre[i + 1] = pre[i] + vec[i];",
+            "}"
+        ]
+    },
+    "suffix": {
+        "prefix": "suffix",
+        "body": [
+            "vector<ll> suf(n + 1);",
+            "for (int i = n - 1; i >= 0; --i) {",
+            "    suf[i] = suf[i + 1] + vec[i];",
+            "}"
+        ]
+    },
+    "init": {
+        "prefix": "init",
+        "body": [
+            "auto init = []() {",
+            "    $1",
+            "    return 0;",
+            "}();"
+        ]
+    }
+}
