@@ -22,25 +22,29 @@
     "上下左右": {
         "prefix": "dir",
         "body": [
-            "static constexpr int dir[4][2] = {{-1,0},{0,-1},{1,0},{0,1},};"
+            "static constexpr int dx[] = {1, 0, -1, 0};",
+            "static constexpr int dy[] = {0, 1, 0, -1};"
         ]
     },
     "马": {
         "prefix": "dir_horse",
         "body": [
-            "static constexpr int dir[8][2] = {{1,2},{1,-2},{2,1},{2,-1},{-1,2},{-1,-2},{-2,1},{-2,-1},};"
+            "static constexpr int dx[] = {1, 1, 2, 2, -1, -1, -2, -2};",
+            "static constexpr int dy[] = {2, -2, 1, -1, 2, -2, 1, -1};"
         ]
     },
     "周围": {
         "prefix": "dir_around",
         "body": [
-            "static constexpr int dir[8][2] = {{1,0},{0,1},{-1,0},{0,-1},{1,1},{1,-1},{-1,1},{-1,-1},};"
+            "static constexpr int dx[] = {1, 0, -1, 0, 1, 1, -1, -1};",
+            "static constexpr int dy[] = {0, 1, 0, -1, 1, -1, 1, -1};"
         ]
     },
     "四角": {
         "prefix": "dir_corner",
         "body": [
-            "static constexpr int dir[4][2] = {{-1,1},{-1,-1},{1,-1},{1,1},};"
+            "static constexpr int dx[] = {-1, -1, 1, 1};",
+            "static constexpr int dy[] = {1, -1, -1, 1};"
         ]
     },
     "区间合并": {
