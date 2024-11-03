@@ -1,6 +1,6 @@
 {
     "solcpp": {
-        "prefix": "sol",
+        "prefix": "solcpp",
         "body": [
             "#include <bits/stdc++.h>",
             "",
