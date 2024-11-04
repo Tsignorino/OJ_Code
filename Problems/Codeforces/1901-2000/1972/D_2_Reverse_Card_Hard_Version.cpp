@@ -3,7 +3,7 @@
 using namespace std;
 using ll = long long;
 
-constexpr int mod = 1e9 + 7;
+static constexpr int mod = 1e9 + 7;
 
 /*
     假定 g = gcd(a, b)，则 a = u * g, b = v * g
@@ -29,8 +29,6 @@ void solve() {
 signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout.tie(nullptr);
-    cout.precision(20);
 
     int T;
     cin >> T;

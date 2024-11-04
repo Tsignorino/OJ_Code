@@ -3,7 +3,7 @@
 using namespace std;
 using ll = long long;
 
-constexpr int mod = 1e9 + 7;
+static constexpr int mod = 1e9 + 7;
 
 // Alice 移除最大的元素 0 ~ k 个
 // Bob 将最大的 min(len(nums), x) 个元素标记
@@ -11,6 +11,7 @@ constexpr int mod = 1e9 + 7;
 void solve() {
     int n, k, x;
     cin >> n >> k >> x;
+
     vector<int> nums(n);
     for (int& num : nums) {
         cin >> num;
@@ -40,18 +41,16 @@ void solve() {
         // }
         // ans = max(ans, sum);
     }
-
     cout << ans << "\n";
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout.tie(nullptr);
 
-    int count;
-    cin >> count;
-    while (count--) {
+    int T;
+    cin >> T;
+    while (T--) {
         solve();
     }
 

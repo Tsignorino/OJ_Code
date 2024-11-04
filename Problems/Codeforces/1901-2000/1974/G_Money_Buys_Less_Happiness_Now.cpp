@@ -21,13 +21,12 @@ void solve() {
             sum += q.top();
             q.pop();
         }
-
         sum += x;
     }
     cout << q.size() << "\n";
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 

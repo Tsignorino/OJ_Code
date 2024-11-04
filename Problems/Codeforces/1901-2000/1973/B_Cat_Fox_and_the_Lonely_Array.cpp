@@ -1,123 +1,123 @@
 #include <bits/stdc++.h>
 
+#ifdef LOCAL
+#include "debug.h"
+#endif
+
 using namespace std;
 using ll = long long;
 
-constexpr int MOD = 1e9 + 7;
+static constexpr int MOD = 1'000'000'007;
 
-struct Info {
-    ll _or;
-    Info(ll _or = 0) : _or(_or) {}
-};
-Info operator+(const Info& a, const Info& b) {
-    return Info(a._or | b._or);
-}
-
+template <class Info>
 class SegTree {
-#define ls(o) o << 1
-#define rs(o) o << 1 | 1
-private:
-    ll n;
-    vector<Info> info;
+    const int n;
+    vector<Info> tree;
+
+    void pull(int o) { tree[o] = tree[o << 1] + tree[o << 1 | 1]; }
 
 public:
-    // SegTree() {}
-    SegTree(ll n) : n(n), info(4 * n) {} // (32 - __builtin_clz(n)) << 2
+    SegTree(int n) : n(n), tree(4 << __lg(n)) {}
     SegTree(const vector<Info>& init) : SegTree(init.size()) {
-        function<void(ll, ll, ll)> build = [&](ll o, ll l, ll r) -> void {
+        function<void(int, int, int)> build = [&](int o, int l, int r) {
             if (l == r) {
-                info[o] = init[l];
+                tree[o] = init[l];
                 return;
             }
-
-            ll mid = l + (r - l) / 2;
-            build(ls(o), l, mid);
-            build(rs(o), mid + 1, r);
-            info[o] = info[ls(o)] + info[rs(o)];
+            int m = (l + r) / 2;
+            build(o << 1, l, m);
+            build(o << 1 | 1, m + 1, r);
+            pull(o);
         };
-        build(1, 1, n);
+        build(1, 0, n - 1);
     }
 
-    Info query(ll todoL, ll todoR, ll o, ll l, ll r) {
-        if (r < todoL || todoR < l) {
-            return Info();
+    Info query(int L, int R, int o, int l, int r) {
+        if (L <= l && r <= R) {
+            return tree[o];
         }
-        if (todoL <= l && r <= todoR) {
-            return info[o];
+        int m = l + (r - l) / 2;
+        if (R <= m) {
+            return query(L, R, o << 1, l, m);
         }
-
-        ll mid = l + (r - l) / 2;
-        return query(todoL, todoR, ls(o), l, mid) + query(todoL, todoR, rs(o), mid + 1, r);
+        if (m < L) {
+            return query(L, R, o << 1 | 1, m + 1, r);
+        }
+        return query(L, R, o << 1, l, m) + query(L, R, o << 1 | 1, m + 1, r);
     }
-    Info query(ll l, ll r) { return query(l, r, 1, 1, n); }
-#undef ls
-#undef rs
+    Info query(int L, int R) { return query(L, R, 1, 0, n - 1); }
 };
+struct Info {
+    int or_ = 0;
+};
+Info operator+(const Info& p, const Info& q) {
+    return Info(p.or_ | q.or_);
+}
 
 void solve() {
     int n;
     cin >> n;
-    vector<Info> res(n + 1);
-    for (int i = 1; i <= n; ++i) {
-        int val;
-        cin >> val;
-        res[i]._or = val;
+
+    vector<Info> vec(n);
+    for (auto& v : vec) {
+        cin >> v.or_;
     }
 
-    SegTree tree(res);
-    int l = 0, r = n + 1;
-    int ans = n;
-    while (l + 1 < r) {
-        int k = l + (r - l) / 2;
-        set<int> set;
-        for (int i = 1; i + k - 1 <= n; ++i) {
-            set.emplace(tree.query(i, i + k - 1)._or);
+    SegTree<Info> t(vec);
+
+    auto check = [&](auto x) {
+        set<int> s;
+        for (int i = 0; i + x - 1 < n; ++i) {
+            s.emplace(t.query(i, i + x - 1).or_);
         }
-        if (set.size() == 1) {
-            r = k;
-            ans = min(ans, r);
+        return s.size() == 1;
+    };
+
+    int lo = 0, hi = n + 1;
+    while (lo + 1 < hi) {
+        auto mid = lo + (hi - lo) / 2;
+
+        if (check(mid)) {
+            hi = mid;
         } else {
-            l = k;
+            lo = mid;
         }
     }
-    cout << ans << "\n";
+    cout << hi << "\n";
 }
 
-void solve_failToPass() {
+/*
+// 另一种解法：
+
+void solve() {
     int n;
     cin >> n;
+
     vector<int> vec(n);
     for (int& v : vec) {
         cin >> v;
     }
 
-    int l = 0, r = n + 1;
-    int ans = n;
-    while (l + 1 < r) {
-        int k = l + (r - l) / 2;
-
-        set<int> set;
-        for (int i = 0; i + k - 1 < n; ++i) {
-            int res = 0;
-            for (int j = i; j < i + k; ++j) {
-                res |= vec[j];
+    int ans = 1;
+    for (int i = 0; i < 20; ++i) {
+        int pre = -1;
+        for (int j = 0; j < vec.size(); ++j) {
+            if (vec[j] >> i & 1) {
+                ans = max(ans, j - pre);
+                pre = j;
             }
-            set.insert(res);
         }
-        if (set.size() == 1) {
-            r = k;
-            ans = min(ans, r);
-        } else {
-            l = k;
+        if (pre >= 0) {
+            ans = max(ans, n - pre);
         }
     }
     cout << ans << "\n";
 }
+*/
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout.precision(20);
 
     int T;
     cin >> T;

@@ -5,10 +5,6 @@ using ll = long long;
 
 static constexpr int MOD = 1e9 + 7;
 
-/*
-    dp
-*/
-
 void solve() {
     int n, l, r;
     cin >> n >> l >> r;

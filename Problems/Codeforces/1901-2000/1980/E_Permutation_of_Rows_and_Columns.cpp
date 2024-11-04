@@ -3,17 +3,19 @@
 using namespace std;
 using ll = long long;
 
-constexpr int MOD = 1e9 + 7;
+static constexpr int MOD = 1e9 + 7;
 
 void solve() {
     int n, m;
     cin >> n >> m;
+
     vector<vector<int>> a(n, vector<int>(m));
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < m; ++j) {
             cin >> a[i][j];
         }
     }
+
     map<int, pair<int, int>> mp;
     vector<vector<int>> b(n, vector<int>(m));
     for (int i = 0; i < n; ++i) {
@@ -40,7 +42,6 @@ void solve() {
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout.precision(20);
 
     int T;
     cin >> T;

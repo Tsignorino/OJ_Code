@@ -3,11 +3,12 @@
 using namespace std;
 using ll = long long;
 
-constexpr int MOD = 1e9 + 7;
+static constexpr int MOD = 1e9 + 7;
 
 void solve() {
     int L, n, q;
     cin >> L >> n >> q;
+
     vector<int> a(n + 1);
     for (int i = 1; i <= n; ++i) {
         cin >> a[i];
@@ -31,11 +32,9 @@ void solve() {
     cout << "\n";
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout.tie(nullptr);
-    cout.precision(20);
 
     int T;
     cin >> T;

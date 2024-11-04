@@ -12,7 +12,7 @@ void solve() {
     cout << max((y + 1) / 2, (x + y * 4 + 14) / 15) << "\n";
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 

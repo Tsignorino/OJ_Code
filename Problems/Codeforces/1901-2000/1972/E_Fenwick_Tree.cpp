@@ -3,7 +3,7 @@
 using namespace std;
 using ll = long long;
 
-constexpr int MOD = 998244353;
+static constexpr int MOD = 998244353;
 
 template <typename T>
 constexpr T qpow(T x, uint64_t k) {
