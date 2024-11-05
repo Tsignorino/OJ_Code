@@ -3,11 +3,12 @@
 using namespace std;
 using i64 = long long;
 
-constexpr int mod = 1e9 + 7;
+static constexpr int mod = 1e9 + 7;
 
 void solve() {
     int n, m;
     cin >> n >> m;
+
     string x, s;
     cin >> x >> s;
 
@@ -24,14 +25,13 @@ void solve() {
     cout << "-1\n";
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout.tie(nullptr);
 
-    int count;
-    cin >> count;
-    while (count--) {
+    int T;
+    cin >> T;
+    while (T--) {
         solve();
     }
 
