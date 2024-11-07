@@ -4,9 +4,7 @@ from typing import List
 
 
 class Solution:
-    def validPath(
-        self, n: int, edges: List[List[int]], source: int, destination: int
-    ) -> bool:
+    def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
         g = [[] for i in range(n)]
         for edge in edges:
             g[edge[0]].append(edge[1])

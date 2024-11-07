@@ -2,9 +2,7 @@ from typing import List
 
 
 class Solution:
-    def remainingMethods(
-        self, n: int, k: int, invocations: List[List[int]]
-    ) -> List[int]:
+    def remainingMethods(self, n: int, k: int, invocations: List[List[int]]) -> List[int]:
         g = [[] for _ in range(n)]
         for x, y in invocations:
             g[x].append(y)

@@ -52,11 +52,7 @@ def solve():
                 hi = mid
 
         k = x - (n + n - lo + 1) * lo // 2
-        return (
-            ppre[lo]
-            + (pre2[lo + k] - pre2[lo])
-            - (pre1[lo + k] - pre1[lo]) * (n - lo - k)
-        )
+        return ppre[lo] + (pre2[lo + k] - pre2[lo]) - (pre1[lo + k] - pre1[lo]) * (n - lo - k)
 
     for _ in range(II()):
         l, r = MII()

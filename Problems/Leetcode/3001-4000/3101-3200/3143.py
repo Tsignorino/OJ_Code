@@ -8,12 +8,7 @@ MOD = 1_000_000_007
 
 class Solution:
     def maxPointsInsideSquare(self, points: List[List[int]], s: str) -> int:
-        lst = list(
-            sorted(
-                (fmax(fabs(x), fabs(y)), ord(ch) - ord("a"))
-                for (x, y), ch in zip(points, s)
-            )
-        )
+        lst = list(sorted((fmax(fabs(x), fabs(y)), ord(ch) - ord("a")) for (x, y), ch in zip(points, s)))
 
         n, i, mask, ans = len(points), 0, 0, 0
         while i < n:

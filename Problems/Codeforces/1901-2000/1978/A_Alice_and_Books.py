@@ -20,11 +20,10 @@ def solve():
     _ = I()
     lst = LII()
     print(lst[-1] + max(lst[:-1]))
-    
+
     pass
 
 
 if __name__ == "__main__":
-    T = II()
-    for i in range(T):
+    for i in range(II()):
         solve()

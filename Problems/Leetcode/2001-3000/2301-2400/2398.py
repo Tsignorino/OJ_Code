@@ -12,9 +12,7 @@ fmax = lambda x, y: x if x >= y else y
 
 
 class Solution:
-    def maximumRobots(
-        self, chargeTimes: List[int], runningCosts: List[int], budget: int
-    ) -> int:
+    def maximumRobots(self, chargeTimes: List[int], runningCosts: List[int], budget: int) -> int:
         n = len(chargeTimes)
 
         pre = list(accumulate(runningCosts, initial=0))
@@ -31,11 +29,7 @@ class Solution:
 
                 q.append(r)
 
-                if (
-                    r + 1 >= x
-                    and (pre[r + 1] - pre[fmax(r - x + 1, 0)]) * x + chargeTimes[q[0]]
-                    <= budget
-                ):
+                if r + 1 >= x and (pre[r + 1] - pre[fmax(r - x + 1, 0)]) * x + chargeTimes[q[0]] <= budget:
                     return True
 
             return False

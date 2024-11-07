@@ -13,11 +13,7 @@ class Solution:
             if i == n:
                 return 1 if (g1 == g2) else 0
 
-            return (
-                dfs(i + 1, gcd(g1, nums[i]), g2)
-                + dfs(i + 1, g1, gcd(g2, nums[i]))
-                + dfs(i + 1, g1, g2)
-            ) % MOD
+            return (dfs(i + 1, gcd(g1, nums[i]), g2) + dfs(i + 1, g1, gcd(g2, nums[i])) + dfs(i + 1, g1, g2)) % MOD
 
         return (dfs(0) - 1) % MOD  # 减去全不选
 

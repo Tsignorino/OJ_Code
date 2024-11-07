@@ -16,9 +16,7 @@ MOD = 1_000_000_007
 
 # a @ b，其中 @ 是矩阵乘法
 def multiply(a: List[List[int]], b: List[List[int]]) -> List[List[int]]:
-    return [
-        [sum(x * y for x, y in zip(row, col)) % MOD for col in zip(*b)] for row in a
-    ]
+    return [[sum(x * y for x, y in zip(row, col)) % MOD for col in zip(*b)] for row in a]
 
 
 # a^n @ f0
