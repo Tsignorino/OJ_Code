@@ -45,6 +45,15 @@
 
 ## 思维技巧类
 
+#### 杂项
+
+| Link                                                                                         | Explanation                   |
+| -------------------------------------------------------------------------------------------- | ----------------------------- |
+| https://atcoder.jp/contests/abc379/tasks/abc379_c                                            | 考虑每次操作给 sum 带来的影响 |
+| https://codeforces.com/contest/1976/problem/D                                                | 折线法（括号序列）            |
+| https://leetcode.cn/problems/count-of-substrings-containing-every-vowel-and-k-consonants-ii/ | 恰好 -> 最多（最少）          |
+
+
 #### 换位置  Pi =  P_(pi)
 
 | Link                                              | Explanation |
@@ -61,15 +70,6 @@
 | https://www.luogu.com.cn/problem/P2024            |                  |
 | https://atcoder.jp/contests/abc327/tasks/abc327_d |                  |
 | https://atcoder.jp/contests/abc373/tasks/abc373_d | 权重并查集（可） |
-
-
-
-#### 恰好 -> 最多（最少）
-
-| Link                                                                                         | Explanation |
-| -------------------------------------------------------------------------------------------- | ----------- |
-| https://leetcode.cn/problems/count-of-substrings-containing-every-vowel-and-k-consonants-ii/ |             |
-
 
 
 #### 记录 `不同` 元素的位置
@@ -105,15 +105,6 @@ for (int i = n - 1; i >= 0; --i) {
 | Link                                              | Explanation |
 | ------------------------------------------------- | ----------- |
 | https://atcoder.jp/contests/abc371/tasks/abc371_e |             |
-
-
-
-#### 折线法（括号序列）
-
-| Link                                          | Explanation |
-| --------------------------------------------- | ----------- |
-| https://codeforces.com/contest/1976/problem/D |             |
-
 
 
 #### 拆环成链
