@@ -31,21 +31,19 @@ if 1:
 
 def solve():
     n = II()
-    s = I()
 
-    a = [(i + 1) * int(s[i]) for i in range(n)]
+    a = [int(x) for x in I()]
+    for i in range(n):
+        a[i] *= i + 1
     for i in range(1, n):
         a[i] += a[i - 1]
 
-    i = c = 0
-    ans = []
-    while i < n or c > 0:
-        if i < n:
-            c += a[n - 1 - i]
-        ans.append(c % 10)
-        c //= 10
-        i += 1
-    print(*ans[::-1], sep="")
+    for i in range(n - 2, -1, -1):
+        a[i] += a[i + 1] // 10
+        a[i + 1] %= 10
+
+    # print("".join(map(str, a)))
+    print(*a, sep="")
 
 
 if __name__ == "__main__":
