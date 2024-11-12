@@ -13,7 +13,7 @@ void solve() {
     int n;
     cin >> n;
 
-    priority_queue<ll, vector<ll>, greater<ll>> q;
+    queue<ll> q;
     ll now = 0;
     for (int i = 0; i < n; ++i) {
         int Op;
@@ -31,7 +31,7 @@ void solve() {
 
             int ans = 0;
             while (!q.empty()) {
-                if (q.top() > now - h) {
+                if (q.front() > now - h) {
                     break;
                 }
                 q.pop();

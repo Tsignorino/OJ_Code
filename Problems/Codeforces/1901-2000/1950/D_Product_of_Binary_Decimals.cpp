@@ -35,47 +35,6 @@ void solve() {
     cout << (dp[n] ? "YES" : "NO") << "\n";
 }
 
-void mysolve() {
-    int n;
-    cin >> n;
-
-    vector<int> nums = {10, 11, 101, 111, 1001, 10001, 11111, 100001};
-
-    int flag = 0;
-    int m = n;
-    while (n) {
-        int b = n % 10;
-        n /= 10;
-        if (b != 0 && b != 1) {
-            flag = 1;
-        }
-    }
-    if (flag == 0) {
-        cout << "YES\n";
-        return;
-    }
-
-    n = m;
-    // todo
-    for (int i = 6; i >= 0; --i) {
-        for (int j = 0; j < 20; ++j) {
-            if (n % nums[i] == 0) {
-                n /= nums[i];
-            }
-        }
-    }
-
-    while (n) {
-        int b = n % 10;
-        n /= 10;
-        if (b != 0 && b != 1) {
-            cout << "NO\n";
-            return;
-        }
-    }
-    cout << "YES\n";
-}
-
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
