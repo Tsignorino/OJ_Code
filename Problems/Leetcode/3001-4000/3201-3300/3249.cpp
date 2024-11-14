@@ -39,7 +39,6 @@ public:
         vector<vector<int>> g(n);
         for (auto& e : edges) {
             int u = e[0], v = e[1];
-
             g[u].emplace_back(v);
             g[v].emplace_back(u);
         }
