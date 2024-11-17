@@ -1,5 +1,4 @@
 import sys
-from string import ascii_lowercase, ascii_uppercase
 
 input = lambda: sys.stdin.readline().strip()
 fmax = lambda x, y: x if x > y else y
@@ -12,29 +11,26 @@ LII = lambda: list(map(int, input().split()))
 MII = lambda: map(int, input().split())
 LGMI = lambda: map(lambda x: int(x) - 1, input().split())
 
-MOD = 1_000_000_007
-
-mp = {}
-for x in ascii_lowercase:
-    mp[x] = x.upper()
-for x in ascii_uppercase:
-    mp[x] = x.lower()
+MOD = 998244353
 
 
 def solve():
     s = I()
-    q = II()
+    n = len(s)
 
-    nums = LGMI()
-    ans = []
-    for x in nums:
-        a, b = divmod(x, len(s))
-        if a.bit_count() % 2:
-            ans.append(mp[s[b]])
+    ans, cnt = 0, 1
+    p = 0
+    for i in range(n):
+        p += 1
+        if i == n - 1 or s[i] != s[i + 1]:
+            cnt = cnt * p % MOD
+            p = 0
         else:
-            ans.append(s[b])
-    print(*ans)
+            ans += 1
+            cnt = cnt * ans % MOD
+    print(ans, cnt)
 
 
 if __name__ == "__main__":
-    solve()
+    for _ in range(II()):
+        solve()

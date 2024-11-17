@@ -1,20 +1,19 @@
-if 1:
-    import sys
+import sys
+import typing
+from math import inf
 
-    input = lambda: sys.stdin.readline().strip()
-    fmax = lambda x, y: x if x > y else y
+input = lambda: sys.stdin.readline().strip()
+fmax = lambda x, y: x if x > y else y
+fmin = lambda x, y: x if x < y else y
 
-    def I():
-        return input().split()
+I = lambda: input()
+II = lambda: int(input())
+LI = lambda: list(input())
+LII = lambda: list(map(int, input().split()))
+MII = lambda: map(int, input().split())
+LGMI = lambda: map(lambda x: int(x) - 1, input().split())
 
-    def II():
-        return int(input())
-
-    def MII():
-        return map(int, input().split())
-
-    def LII():
-        return list(map(int, input().split()))
+MOD = 998244353
 
 
 def solve():

@@ -1,6 +1,7 @@
 from heapq import heappop, heappush
-from sortedcontainers import SortedList
 from typing import List
+
+from sortedcontainers import SortedList
 
 fabs = lambda x: x if x >= 0 else -x
 

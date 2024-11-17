@@ -1,7 +1,6 @@
-from typing import List
 from collections import deque
 from math import inf
-
+from typing import List
 
 fmax = lambda x, y: x if x > y else y
 dirs = [(0, 1), (1, 0), (0, -1), (-1, 0)]

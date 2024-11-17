@@ -1,8 +1,8 @@
 if 1:
-    from typing import Any, Optional, List
+    import sys
     from functools import cache
     from math import comb, inf
-    import sys
+    from typing import Any, List, Optional
 
     input = lambda: sys.stdin.readline().strip()
     fmax = lambda x, y: x if x > y else y

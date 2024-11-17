@@ -1,6 +1,5 @@
 from typing import List
 
-
 """
 https://codeforces.com/problemset/problem/1955/E
 """

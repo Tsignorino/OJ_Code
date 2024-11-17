@@ -1,7 +1,8 @@
-from itertools import accumulate
-from typing import Any, Optional, List
 from functools import cache
+from itertools import accumulate
 from math import inf
+from typing import Any, List, Optional
+
 from more_itertools import minmax, sieve
 
 fmax = lambda x, y: x if x > y else y

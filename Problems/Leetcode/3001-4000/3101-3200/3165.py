@@ -1,10 +1,11 @@
 if 1:
-    from typing import Any, Optional, List
     from collections import Counter
     from functools import cache
     from heapq import heapify, heappop, heappushpop
     from itertools import permutations
     from math import comb, inf
+    from typing import Any, List, Optional
+
     from more_itertools import minmax, sieve
 
 lowbit = lambda x: x & -x

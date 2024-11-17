@@ -1,5 +1,4 @@
-from collections import defaultdict
-from typing import Any, Counter, Optional, List
+from typing import List
 
 # 子序列计数 DP
 # https://leetcode.cn/circle/discuss/tXLS3i/

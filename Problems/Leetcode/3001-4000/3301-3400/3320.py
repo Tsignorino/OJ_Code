@@ -1,6 +1,5 @@
 from collections import Counter
 
-
 mod = 10**9 + 7
 d = dict(zip("FWE", range(3)))
 

@@ -1,7 +1,6 @@
 from collections import Counter, defaultdict
 from math import isqrt
 
-
 # class Solution:
 #     def judgeSquareSum(self, c: int) -> bool:
 #         a, b = 0, isqrt(c)

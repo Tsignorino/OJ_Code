@@ -1,7 +1,6 @@
 from heapq import heapify, heappop, heappush, heapreplace
 from typing import List
 
-
 """
 整理思路：
     相当于找一个固定的顺序，然后快速幂求解

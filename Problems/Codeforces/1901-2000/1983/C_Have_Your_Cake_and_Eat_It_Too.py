@@ -1,9 +1,9 @@
 if 1:
-    from bisect import bisect_left
-    from itertools import accumulate, permutations
-    from functools import cache
-    from math import comb
     import sys
+    from bisect import bisect_left
+    from functools import cache
+    from itertools import accumulate, permutations
+    from math import comb
 
     input = lambda: sys.stdin.readline().strip()
     fmax = lambda x, y: x if x > y else y

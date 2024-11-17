@@ -1,11 +1,12 @@
 if 1:
-    from typing import Any, Optional, List
+    import sys
     from collections import Counter
     from functools import cache
     from heapq import heapify, heappop, heappushpop
     from math import inf
+    from typing import Any, List, Optional
+
     from more_itertools import minmax, sieve
-    import sys
 
     input = lambda: sys.stdin.readline().strip()
     fmax = lambda x, y: x if x > y else y
