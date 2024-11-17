@@ -14,8 +14,8 @@ for %%i in (%folders%) do (
     )
 )
 
-REM 排序 Python 导入
-echo Python files' headers have been sorted.
+REM 为 Python 导入的包排序
+echo Python files' packages have been sorted.
 isort .
 
 endlocal
