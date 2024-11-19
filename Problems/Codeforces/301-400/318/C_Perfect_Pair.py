@@ -17,22 +17,22 @@ MOD = 998244353
 
 
 def solve():
-    n = II()
-    a, _ = MII()
+    a, b, m = MII()
 
-    lst = []
-    for _ in range(n):
-        l, r = MII()
-        lst.append((l, r))
-
-    lst.sort(key=lambda x: x[0] * x[1])
-
-    pre = a
-    mx = 0
-    for _, (l, r) in enumerate(lst):
-        mx = max(mx, pre // r)
-        pre *= l
-    print(mx)
+    if a <= 0 and b <= 0:
+        print(0 if fmax(a, b) >= m else -1)
+    else:
+        ans = 0
+        while fmax(a, b) < m:
+            if a > b:
+                a, b = b, a
+            if a < 0:
+                tmp = -a // b
+                ans += tmp
+                a += tmp * b
+            a += b
+            ans += 1
+        print(ans)
 
 
 if __name__ == "__main__":

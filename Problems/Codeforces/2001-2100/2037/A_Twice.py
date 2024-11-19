@@ -1,3 +1,4 @@
+from collections import Counter
 from math import inf
 import sys
 import typing
@@ -17,23 +18,10 @@ MOD = 998244353
 
 
 def solve():
-    n = II()
-    a, _ = MII()
-
-    lst = []
-    for _ in range(n):
-        l, r = MII()
-        lst.append((l, r))
-
-    lst.sort(key=lambda x: x[0] * x[1])
-
-    pre = a
-    mx = 0
-    for _, (l, r) in enumerate(lst):
-        mx = max(mx, pre // r)
-        pre *= l
-    print(mx)
+    _ = II()
+    print(sum(v // 2 for v in Counter(LII()).values()))
 
 
 if __name__ == "__main__":
-    solve()
+    for _ in range(II()):
+        solve()

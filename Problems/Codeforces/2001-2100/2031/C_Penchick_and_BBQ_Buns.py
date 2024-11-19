@@ -1,6 +1,6 @@
+from collections import defaultdict
 import sys
 import typing
-from collections import defaultdict
 
 input = lambda: sys.stdin.readline().strip()
 fmax = lambda x, y: x if x > y else y

@@ -1,10 +1,10 @@
 if 1:
-    import sys
     from collections import Counter
     from functools import cache
     from heapq import heapify, heappop, heappushpop
     from math import inf
     from typing import Any, List, Optional
+    import sys
 
     from more_itertools import minmax, sieve
 

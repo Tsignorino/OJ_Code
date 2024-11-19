@@ -18,22 +18,17 @@ MOD = 998244353
 
 def solve():
     n = II()
-    a, _ = MII()
 
-    lst = []
-    for _ in range(n):
-        l, r = MII()
-        lst.append((l, r))
-
-    lst.sort(key=lambda x: x[0] * x[1])
-
-    pre = a
-    mx = 0
-    for _, (l, r) in enumerate(lst):
-        mx = max(mx, pre // r)
-        pre *= l
-    print(mx)
+    if n <= 4:
+        print(-1)
+    else:
+        a = list(range(1, n + 1, 2))
+        a.remove(5)
+        b = list(range(2, n + 1, 2))
+        b.remove(4)
+        print(*(a + [5, 4] + b))
 
 
 if __name__ == "__main__":
-    solve()
+    for _ in range(II()):
+        solve()

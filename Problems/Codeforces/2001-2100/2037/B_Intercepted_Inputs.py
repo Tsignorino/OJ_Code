@@ -1,4 +1,6 @@
+from collections import Counter, defaultdict
 from math import inf
+from random import shuffle
 import sys
 import typing
 
@@ -18,22 +20,24 @@ MOD = 998244353
 
 def solve():
     n = II()
-    a, _ = MII()
+    a = LII()
 
-    lst = []
-    for _ in range(n):
-        l, r = MII()
-        lst.append((l, r))
+    d = [0] * (n + 1)
+    for v in a:
+        d[v] += 1
 
-    lst.sort(key=lambda x: x[0] * x[1])
-
-    pre = a
-    mx = 0
-    for _, (l, r) in enumerate(lst):
-        mx = max(mx, pre // r)
-        pre *= l
-    print(mx)
+    n -= 2
+    for u in range(1, n + 1):
+        if u * u > n:
+            break
+        if n % u:
+            continue
+        v = n // u
+        if u != v and d[u] and d[v] or u == v and d[u] >= 2:
+            print(u, v)
+            return
 
 
 if __name__ == "__main__":
-    solve()
+    for _ in range(II()):
+        solve()

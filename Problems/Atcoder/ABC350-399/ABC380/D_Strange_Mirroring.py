@@ -1,5 +1,5 @@
-import sys
 from string import ascii_lowercase, ascii_uppercase
+import sys
 
 input = lambda: sys.stdin.readline().strip()
 fmax = lambda x, y: x if x > y else y
