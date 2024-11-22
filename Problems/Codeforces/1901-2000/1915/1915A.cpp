@@ -6,12 +6,10 @@ using ll = long long;
 void solve() {
     //* 异或
     int ans = 0;
-    int num;
-    for (int i = 0; i < 3; ++i) {
+    for (int i = 0, num; i < 3; ++i) {
         cin >> num;
         ans ^= num;
     }
-
     cout << ans << "\n";
 
     //* 哈希
@@ -32,14 +30,13 @@ void solve() {
     // cout << ans << "\n";
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout.tie(nullptr);
 
-    int count;
-    cin >> count;
-    while (count--) {
+    int T;
+    cin >> T;
+    while (T--) {
         solve();
     }
 

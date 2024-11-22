@@ -2,7 +2,6 @@
 
 using namespace std;
 using ll = long long;
-#define mod 1e9 + 7
 
 void solve() {
     // 找到最长区间，使得区间内的数能够被 n 整除
@@ -26,14 +25,13 @@ void solve() {
     cout << i - 1 << "\n";
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout.tie(nullptr);
 
-    int count;
-    cin >> count;
-    while (count--) {
+    int T;
+    cin >> T;
+    while (T--) {
         solve();
     }
 

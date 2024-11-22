@@ -10,25 +10,19 @@ using ll = long long;
 static constexpr int MOD = 1'000'000'007;
 
 void solve() {
-    int n, m;
-    cin >> n >> m;
+    int n, k;
+    cin >> n >> k;
 
-    ll s = 1;
-    for (int i = 1; i <= n; ++i) {
-        int x;
-        cin >> x;
-        s *= x;
-    }
-
-    if (2023 % s == 0) {
-        cout << "Yes\n";
-        cout << 2023 / s;
-        for (int i = 1; i < m; ++i) {
-            cout << " 1";
+    if (n == 1) {
+        cout << k << "\n";
+    } else {
+        vector<int> ans(n);
+        ans[0] = (1 << (__lg(k + 1))) - 1;
+        ans[1] = k - ans[0];
+        for (int& v : ans) {
+            cout << v << " ";
         }
         cout << "\n";
-    } else {
-        cout << "No\n";
     }
 }
 

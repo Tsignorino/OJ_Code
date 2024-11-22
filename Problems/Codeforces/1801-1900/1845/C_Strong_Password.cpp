@@ -17,6 +17,7 @@ void solve() {
 
     int m;
     cin >> m;
+
     string l, r;
     cin >> l >> r;
 

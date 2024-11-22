@@ -1,25 +1,30 @@
 #include <bits/stdc++.h>
 
+#ifdef LOCAL
+#include "debug.h"
+#endif
+
 using namespace std;
-using i64 = long long;
+using ll = long long;
+
+static constexpr int MOD = 1'000'000'007;
 
 void solve() {
     int n;
     cin >> n;
 
-    vector<int> a(n);
-    i64 sum = 0, cnt = 0;
+    map<int, int> mp;
     for (int i = 0; i < n; ++i) {
-        cin >> a[i];
-        sum += a[i];
-        cnt += a[i] == 1;
+        int v;
+        cin >> v;
+        mp[v]++;
     }
 
-    if (sum >= cnt + n && n > 1) {
-        cout << "YES\n";
-    } else {
-        cout << "NO\n";
+    int ans = 0;
+    for (auto& [_, c] : mp) {
+        ans += c / 3;
     }
+    cout << ans << "\n";
 }
 
 int main() {

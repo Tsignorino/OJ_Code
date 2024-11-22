@@ -3,11 +3,10 @@
 using namespace std;
 using ll = long long;
 
-constexpr int mod = 1e9 + 7;
-
 void solve() {
     int n, k;
     cin >> n >> k;
+
     vector<int> vec(n);
     unordered_map<int, int> ump;
     for (int& val : vec) {
@@ -41,14 +40,13 @@ void solve() {
     cout << "YES\n";
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout.tie(nullptr);
 
-    int count;
-    cin >> count;
-    while (count--) {
+    int T;
+    cin >> T;
+    while (T--) {
         solve();
     }
 

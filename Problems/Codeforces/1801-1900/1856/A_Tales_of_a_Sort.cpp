@@ -3,12 +3,11 @@
 using namespace std;
 using i64 = long long;
 
-constexpr int mod = 1e9 + 7;
-
 void solve() {
     int n;
     cin >> n;
-    int a[n];
+
+    vector<int> a(n);
     int ans = 0;
     for (int i = 0; i < n; ++i) {
         cin >> a[i];
@@ -27,14 +26,13 @@ void solve() {
     cout << ans << "\n";
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout.tie(nullptr);
 
-    int count;
-    cin >> count;
-    while (count--) {
+    int T;
+    cin >> T;
+    while (T--) {
         solve();
     }
 

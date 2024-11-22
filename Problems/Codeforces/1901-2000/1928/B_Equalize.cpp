@@ -3,7 +3,7 @@
 using namespace std;
 using ll = long long;
 
-constexpr int mod = 1e9 + 7;
+static constexpr int mod = 1e9 + 7;
 
 void solve() {
     int n;
@@ -14,6 +14,7 @@ void solve() {
     }
 
     ranges::sort(nums);
+
     auto iter = unique(nums.begin(), nums.end());
     nums.erase(iter, nums.end());
     // nums.resize(iter - nums.begin());
@@ -28,14 +29,13 @@ void solve() {
     cout << ans << "\n";
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout.tie(nullptr);
 
-    int count;
-    cin >> count;
-    while (count--) {
+    int T;
+    cin >> T;
+    while (T--) {
         solve();
     }
 

@@ -3,8 +3,6 @@
 using namespace std;
 using ll = long long;
 
-constexpr int MOD = 1000000007;
-
 void solve() {
     int n, m;
     cin >> n >> m;

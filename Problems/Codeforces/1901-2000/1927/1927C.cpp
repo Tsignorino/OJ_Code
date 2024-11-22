@@ -2,14 +2,14 @@
 
 using namespace std;
 using ll = long long;
-#define mod 1e9 + 7
 
 void solve() {
     int n, m;
     ll k;
     cin >> n >> m >> k;
-    int a[n], b[m];
-    unordered_map<int, int> cnt;
+
+    vector<int> a(n), b(m);
+    map<int, int> cnt;
 
     for (int i = 0; i < n; ++i) {
         cin >> a[i];
@@ -36,14 +36,13 @@ void solve() {
     }
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout.tie(nullptr);
 
-    int count;
-    cin >> count;
-    while (count--) {
+    int T;
+    cin >> T;
+    while (T--) {
         solve();
     }
 

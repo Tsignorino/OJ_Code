@@ -8,6 +8,7 @@ static constexpr int MOD = 1'000'000'007;
 void solve() {
     int n;
     cin >> n;
+
     vector<int> a(n), b(n);
     for (int i = 0; i < n; ++i) {
         cin >> a[i] >> b[i];

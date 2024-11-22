@@ -7,7 +7,7 @@ void solve() {
     string s;
     int n;
     cin >> n >> s;
-    
+
     string res = "";
     while (!s.empty()) {
         int x;
@@ -31,14 +31,13 @@ void solve() {
     cout << res << '\n';
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout.tie(nullptr);
 
-    int count;
-    cin >> count;
-    while (count--) {
+    int T;
+    cin >> T;
+    while (T--) {
         solve();
     }
 

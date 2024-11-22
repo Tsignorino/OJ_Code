@@ -11,6 +11,7 @@ constexpr int MOD = 1e9 + 7;
 void solve() {
     int n;
     cin >> n;
+
     vector<int> vec(n);
     for (int& v : vec) {
         cin >> v;

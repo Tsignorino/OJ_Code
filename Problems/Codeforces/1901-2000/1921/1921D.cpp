@@ -19,12 +19,12 @@ void solve() {
     sort(a2.begin(), a2.end());
 
     //* 定长滑窗
-    long long diff = 0;
+    ll diff = 0;
     for (int i = 0; i < n; ++i) {
         diff += abs(a1[i] - a2[i]);
     }
 
-    long long ans = diff;
+    ll ans = diff;
     for (int i = n - 1, r = m - 1; i >= 0; --i, --r) {
         diff += abs(a1[i] - a2[r]);
         diff -= abs(a1[i] - a2[i]);

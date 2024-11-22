@@ -3,17 +3,19 @@
 using namespace std;
 using ll = long long;
 
-constexpr int mod = 1e9 + 7;
+static constexpr int mod = 1e9 + 7;
 
 void solve() {
     int n;
     cin >> n;
+
     string s;
     cin >> s;
 
     vector<ll> ans(n);
-    vector<int> nxt(26, n);
     ans[n - 1] = 1;
+
+    vector<int> nxt(26, n);
     nxt[s[n - 1] - 'a'] = n - 1;
 
     for (int i = n - 2; i >= 0; --i) {
@@ -23,14 +25,13 @@ void solve() {
     cout << ans[0] << "\n";
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout.tie(nullptr);
 
-    int count;
-    cin >> count;
-    while (count--) {
+    int T;
+    cin >> T;
+    while (T--) {
         solve();
     }
 

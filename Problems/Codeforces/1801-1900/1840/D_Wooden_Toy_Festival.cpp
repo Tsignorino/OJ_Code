@@ -3,11 +3,6 @@
 using namespace std;
 using ll = long long;
 
-constexpr int MOD = 1e9 + 7;
-
-/*
-    二分答案
-*/
 void solve() {
     int n;
     cin >> n;
