@@ -8,7 +8,7 @@ II = lambda: int(input())
 LI = lambda: list(input())
 LII = lambda: list(map(int, input().split()))
 MII = lambda: map(int, input().split())
-LGMI = lambda: map(lambda x: int(x) - 1, input().split())
+GMI = lambda: map(lambda x: int(x) - 1, input().split())
 
 MOD = 10**9 + 7
 
