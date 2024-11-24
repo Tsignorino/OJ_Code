@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-#include "_debug.h"
+#include "debug.h"
 
 using namespace std;
 
