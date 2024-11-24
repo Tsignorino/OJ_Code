@@ -1,23 +1,4 @@
 {
-	"solpy": {
-		"prefix": "solpy",
-		"body": [
-			"# Date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}  ${CURRENT_DAY_NAME}",
-			"",
-			"import typing",
-			"from functools import cache",
-			"from math import inf",
-			"from typing import Any, Optional, List",
-			"",
-			"from more_itertools import minmax, sieve",
-			"",
-			"fmax = lambda x, y: x if x > y else y",
-			"fmin = lambda x, y: x if x < y else y",
-			"MOD = 1_000_000_007",
-			"",
-			""
-		]
-	},
 	"py": {
 		"prefix": "py",
 		"body": [
@@ -77,24 +58,6 @@
 			"    for _ in range(II()):",
 			"        solve()",
 			""
-		]
-	},
-	"timer": {
-		"prefix": "timer",
-		"body": [
-			"import time, sys",
-			"",
-			"",
-			"def timer(func):",
-			"    def wrapper(*args, **kwargs):",
-			"        start_time = time.time()",
-			"        result = func(*args, **kwargs)",
-			"        end_time = time.time()",
-			"        sys.stderr.write(f\"{func.__name__}: {end_time - start_time}s\\n\")",
-			"        return result",
-			"",
-			"    return wrapper",
-			"",
 		]
 	}
 }

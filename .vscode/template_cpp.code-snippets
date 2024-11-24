@@ -2,8 +2,6 @@
     "solcpp": {
         "prefix": "solcpp",
         "body": [
-            "// Date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}  ${CURRENT_DAY_NAME}",
-            "",
             "#include <bits/stdc++.h>",
             "",
             "#include \"debug.h\"",
