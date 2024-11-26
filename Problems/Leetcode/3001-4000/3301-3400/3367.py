@@ -22,4 +22,4 @@ class Solution:
             inc.sort(reverse=True)
             return notChoose + sum(inc[:k]), notChoose + sum(inc[: k - 1])
 
-        return max(dfs(0))
+        return max(dfs(0))  # dfs(0)[0]

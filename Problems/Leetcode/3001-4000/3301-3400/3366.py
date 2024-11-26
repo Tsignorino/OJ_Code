@@ -30,3 +30,8 @@ class Solution:
         ans = dfs(0, op1, op2)
         dfs.cache_clear()
         return ans
+
+
+"""
+还有贪心解法
+"""

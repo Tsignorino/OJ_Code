@@ -60,22 +60,22 @@
             "}"
         ]
     },
-    "dfs": {
-        "prefix": "dfs",
+    "lambda递归": {
+        "prefix": "lambda",
         "body": [
-            "auto dfs = [&](auto&& dfs, $1) {",
+            "auto $1 = [&](auto&& $1, ) {",
             "    ",
             "};",
-            "dfs(dfs);"
+            "$1($1);"
         ]
     },
-    "dfs23": {
-        "prefix": "dfs23",
+    "lambda递归23版": {
+        "prefix": "lambda23",
         "body": [
-            "auto dfs = [&](this auto&& dfs, $1) {",
+            "auto $1 = [&](this auto&& $1, ) {",
             "    ",
             "};",
-            "dfs();"
+            "$1();"
         ]
     },
     "prefix": {

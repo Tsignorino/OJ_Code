@@ -1,8 +1,7 @@
 if 1:
     from collections import Counter
     from functools import cache, reduce
-    from heapq import (heapify, heappop, heappushpop, heapreplace, nlargest,
-                       nsmallest)
+    from heapq import heapify, heappop, heappushpop, heapreplace, nlargest, nsmallest
     from math import inf
     from typing import *  # type: ignore
     import sys

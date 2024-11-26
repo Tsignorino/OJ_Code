@@ -6,6 +6,10 @@ using namespace std;
 
 static constexpr int MOD = 1'000'000'007;
 
+/*
+    递推 + 空间优化
+*/
+
 class Solution {
 public:
     int minArraySum(vector<int>& nums, int k, int op1, int op2) {
