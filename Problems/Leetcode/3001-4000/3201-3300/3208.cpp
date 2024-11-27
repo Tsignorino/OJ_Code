@@ -10,12 +10,12 @@ public:
         // 维护以 i 为右端点的交替子数组的长度
         int n = colors.size();
         int ans = 0, cnt = 0;
-        for (int i = 0; i < n * 2; ++i) {
+        for (int i = 0; i < n + k - 1; ++i) {
             if (i > 0 && colors[i % n] == colors[(i - 1) % n]) {
                 cnt = 0;
             }
             cnt++;
-            ans += i >= n && cnt >= k;
+            ans += cnt >= k;
         }
         return ans;
     }
