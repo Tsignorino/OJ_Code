@@ -1,0 +1,8 @@
+CompileFlags:
+  Add:
+    - -std=c++26
+    - -O2
+    - -pipe
+    - -g
+    - -DLOCAL
+    - -ID:/Code/OJ_Code
