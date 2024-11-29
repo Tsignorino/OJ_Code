@@ -1,10 +1,6 @@
 @echo off
 setlocal enabledelayedexpansion
 
-REM 为 Python 导入的包排序
-isort .
-echo Py packages have been sorted.
-
 REM 设置文件夹路径数组，使用分号分隔不同的路径
 set "folders=.cph; build"
 for %%i in (%folders%) do (

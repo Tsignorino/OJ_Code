@@ -12,27 +12,25 @@ using ll = long long;
 static constexpr int MOD = 1'000'000'007;
 
 void solve() {
-    int n;
-    cin >> n;
+    int w, b;
+    cin >> w >> b;
 
-    vector<string> vec(n);
-    for (string& v : vec) {
-        cin >> v;
+    int k = sqrt((w + b) * 2ll);
+    if (k * 1ll * (k + 1) / 2 > w + b) {
+        k--;
     }
-
-    // 拼出最大的字符串
-    ranges::sort(vec, [&](string& a, string& b) { return a + b > b + a; });
-
-    for (string& v : vec) {
-        cout << v;
-    }
+    cout << k << "\n";
 }
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    solve();
+    int T;
+    cin >> T;
+    while (T--) {
+        solve();
+    }
 
     return 0;
 }

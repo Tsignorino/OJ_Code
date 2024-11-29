@@ -1,8 +1,8 @@
 # Date: 2024-11-23  星期六
 
-from itertools import accumulate
 import sys
 import typing
+from itertools import accumulate
 
 input = lambda: sys.stdin.readline().strip()
 

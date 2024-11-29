@@ -1,8 +1,8 @@
+import sys
+import typing
 from collections import Counter, defaultdict
 from math import inf
 from random import shuffle
-import sys
-import typing
 
 input = lambda: sys.stdin.readline().strip()
 fmax = lambda x, y: x if x > y else y

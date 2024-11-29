@@ -10,5 +10,4 @@ skip = ["tests", "setup.py"]
 skip_glob = ["*.pyc", "__pycache__"]
 
 quiet = true
-from_first = true
 order_by_type = true

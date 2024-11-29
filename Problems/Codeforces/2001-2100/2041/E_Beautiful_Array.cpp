@@ -12,20 +12,11 @@ using ll = long long;
 static constexpr int MOD = 1'000'000'007;
 
 void solve() {
-    int n;
-    cin >> n;
+    int a, b;
+    cin >> a >> b;
 
-    vector<string> vec(n);
-    for (string& v : vec) {
-        cin >> v;
-    }
-
-    // 拼出最大的字符串
-    ranges::sort(vec, [&](string& a, string& b) { return a + b > b + a; });
-
-    for (string& v : vec) {
-        cout << v;
-    }
+    cout << 3 << "\n";
+    cout << format("{} {} {}", b, b, a * 3 - b - b) << "\n";
 }
 
 int main() {

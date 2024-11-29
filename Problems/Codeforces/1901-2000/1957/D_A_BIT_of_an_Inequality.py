@@ -1,7 +1,7 @@
-from itertools import accumulate
-from operator import xor
 import sys
 import typing
+from itertools import accumulate
+from operator import xor
 
 input = lambda: sys.stdin.readline().strip()
 

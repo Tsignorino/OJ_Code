@@ -1,6 +1,6 @@
+import queue
 from collections import deque
 from typing import List
-import queue
 
 
 class Solution:

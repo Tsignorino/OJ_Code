@@ -1,7 +1,7 @@
 if 1:
+    import sys
     from functools import cache
     from math import comb
-    import sys
 
     input = lambda: sys.stdin.readline().strip()
     fmax = lambda x, y: x if x > y else y

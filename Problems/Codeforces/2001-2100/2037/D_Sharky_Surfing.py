@@ -1,7 +1,7 @@
-from heapq import heappop, heappush
-from math import inf
 import sys
 import typing
+from heapq import heappop, heappush
+from math import inf
 
 input = lambda: sys.stdin.readline().strip()
 fmax = lambda x, y: x if x > y else y
