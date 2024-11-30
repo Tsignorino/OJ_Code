@@ -16,11 +16,11 @@ void solve() {
 
     queue<int> q;
     q.emplace(0);
+
     int ans = 0;
     while (!q.empty()) {
         int x = q.front();
         q.pop();
-
         ans = x;
         if (a) {
             a--;
@@ -31,7 +31,6 @@ void solve() {
             q.emplace(x + 1);
         }
     }
-
     cout << ans << "\n";
 }
 
