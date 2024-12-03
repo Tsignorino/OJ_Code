@@ -1,3 +1,5 @@
+// Date: 2024-12-03  星期二
+
 #include <bits/stdc++.h>
 
 #ifdef LOCAL
@@ -25,16 +27,16 @@ void solve() {
     }
 
     set<ll> s;
-    auto dfs = [&](auto&& dfs, ll u) {
+    auto dfs = [&](this auto&& dfs, ll u) {
         if (s.contains(u)) {
             return;
         }
         s.emplace(u);
         for (auto& v : g[u]) {
-            dfs(dfs, v);
+            dfs(v);
         }
     };
-    dfs(dfs, n);
+    dfs(n);
     cout << *s.rbegin() << "\n";
 }
 
