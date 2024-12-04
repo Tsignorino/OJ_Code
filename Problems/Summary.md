@@ -52,6 +52,7 @@
 | https://atcoder.jp/contests/abc379/tasks/abc379_c                                            | 考虑每次操作给 sum 带来的影响 |
 | https://codeforces.com/contest/1976/problem/D                                                | 折线法（括号序列）            |
 | https://leetcode.cn/problems/count-of-substrings-containing-every-vowel-and-k-consonants-ii/ | 恰好 -> 最多（最少）          |
+| https://codeforces.com/contest/2027/problem/C                                                | 图的建模                      |
 
 
 #### 换位置  Pi =  P_(pi)
