@@ -1,16 +1,5 @@
-if 1:
-    from collections import Counter
-    from functools import cache
-    from heapq import heapify, heappop, heappushpop
-    from itertools import permutations
-    from math import comb, inf
-    from typing import Any, List, Optional
-
-    from more_itertools import minmax, sieve
-
-    fmax = lambda x, y: x if x > y else y
-    fmin = lambda x, y: x if x < y else y
-    lowbit = lambda x: x & -x
+from collections import Counter
+from typing import List
 
 MOD = 1_000_000_007
 
