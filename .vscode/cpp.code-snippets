@@ -104,5 +104,13 @@
             "    return 0;",
             "}();"
         ]
-    }
+    },
+    "随机数生成": {
+        "prefix": "random",
+        "body": [
+            "mt19937_64 gen(chrono::duration_cast<chrono::milliseconds>(chrono::system_clock::now().time_since_epoch()).count());",
+            "uniform_int_distribution<int> dis($1, $2);",
+            "auto rnd = dis(gen); // 固定值"
+        ]
+    },
 }
