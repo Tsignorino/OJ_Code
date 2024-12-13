@@ -9,8 +9,6 @@ void solve() {
     int n;
     cin >> n;
 
-    int mn = INT_MAX; // 记录最小环长度
-
     vector<int> pa(n + 1);
     iota(pa.begin(), pa.end(), 0);
 
@@ -19,19 +17,19 @@ void solve() {
         return pa[x] == x ? x : find(pa[x], cnt);
     };
 
+    int ans = INT_MAX; // 记录最小环长度
     for (int i = 1; i <= n; ++i) {
         int p;
         cin >> p;
 
         int cnt = 0;
         if (find(p, cnt) == i) {
-            mn = min(mn, cnt);
+            ans = min(ans, cnt);
         } else {
             pa[i] = p;
         }
     }
-
-    cout << mn << "\n";
+    cout << ans << "\n";
 }
 
 int main() {
