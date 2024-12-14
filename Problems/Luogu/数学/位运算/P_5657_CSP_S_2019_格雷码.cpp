@@ -1,9 +1,15 @@
+// Date: 2024-12-14  星期六
+
 #include <bits/stdc++.h>
+
+#ifdef LOCAL
+#include "debug.h"
+#endif
 
 using namespace std;
 using ll = long long;
 
-constexpr int MOD = 1e9 + 7;
+// 考虑答案的每一位，第 i 位即 k ^ (k/2) 的第 i 位
 
 void solve() {
     int n;
@@ -11,7 +17,7 @@ void solve() {
     cin >> n >> k;
 
     k ^= k >> 1;
-    while (~--n) {
+    while (n--) {
         cout << (k >> n & 1);
     }
 }
