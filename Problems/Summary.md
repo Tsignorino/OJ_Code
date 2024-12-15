@@ -32,6 +32,16 @@
 | https://atcoder.jp/contests/abc356/tasks/abc356_e | 注意去重    |
 
 
+## 图论
+
+#### 多源 BFS
+
+> 开始就把所有源头压入队列，其余同单源 BFS，借助 dis 判断重复访问
+
+| Link                                              | Explanation |
+| ------------------------------------------------- | ----------- |
+| https://atcoder.jp/contests/abc383/tasks/abc383_c |             |
+
 
 ## 数据结构
 

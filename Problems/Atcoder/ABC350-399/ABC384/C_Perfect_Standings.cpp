@@ -17,10 +17,8 @@ void solve() {
         cin >> v;
     }
 
-    vector<int> ord(pow(2, N));
-    iota(ord.begin(), ord.end(), 0);
     vector<pair<int, string>> ans;
-    for (int& v : ord) {
+    for (int v : views::iota(0, pow(2, N))) {
         int sum = 0;
         string s;
         for (int i = 0; i < N; ++i) {
