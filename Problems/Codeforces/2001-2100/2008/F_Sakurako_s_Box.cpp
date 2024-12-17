@@ -1,4 +1,10 @@
+// Date: 2024-12-17  星期二
+
 #include <bits/stdc++.h>
+
+#ifdef LOCAL
+#include "debug.h"
+#endif
 
 using namespace std;
 using ll = long long;
@@ -6,20 +12,24 @@ using ll = long long;
 static constexpr int MOD = 1'000'000'007;
 
 template <typename T>
-constexpr T qpow(T x, uint64_t k) {
-    T res = 1;
-    for (; k; k >>= 1) {
-        if (k & 1) {
+constexpr T qpow(T x, uint64_t a, T res = 1) {
+    for (; a; a >>= 1, x *= x) {
+        if (a & 1) {
             res *= x;
         }
-        x *= x;
     }
     return res;
 }
 
+template <uint32_t P>
+constexpr uint32_t mulMod(uint32_t a, uint32_t b) {
+    return a * 1ull * b % P;
+}
 template <uint64_t P>
 constexpr uint64_t mulMod(uint64_t a, uint64_t b) {
-    return a * 1ull * b % P;
+    uint64_t res = a * b - uint64_t(1.L * a * b / P - 0.5L) * P;
+    res %= P;
+    return res;
 }
 
 template <typename T, T P>
@@ -29,10 +39,12 @@ private:
 
 public:
     constexpr ModIntBase() : x(0) {}
+    constexpr ModIntBase(bool b) : x(norm(static_cast<T>(b))) {}
     template <integral U>
-    constexpr ModIntBase(U x_ = 0) : x(norm(x_ % U(P))) {}
+        requires integral<U>
+    constexpr ModIntBase(U x_ = 0) : x(norm(x_ % U {P})) {}
 
-    constexpr T norm(T x) {
+    constexpr static T norm(T x) {
         if ((x >> (8 * sizeof(T) - 1) & 1) == 1) {
             x += P;
         }
@@ -51,10 +63,11 @@ public:
     constexpr ModIntBase inv() const { return qpow(*this, P - 2); }
 
 public:
-    constexpr ModIntBase& operator*=(const ModIntBase& rv) & { return *this = mulMod<P>(x, rv.val()); }
-    constexpr ModIntBase& operator+=(const ModIntBase& rv) & { return *this = norm(x + rv.x); }
-    constexpr ModIntBase& operator-=(const ModIntBase& rv) & { return *this = norm(x - rv.x); }
-    constexpr ModIntBase& operator/=(const ModIntBase& rv) & { return *this *= rv.inv(); }
+    constexpr ModIntBase& operator*=(const ModIntBase& rv) & { return x = mulMod<P>(x, rv.val()), *this; }
+    constexpr ModIntBase& operator+=(const ModIntBase& rv) & { return x = norm(x + rv.x), *this; }
+    constexpr ModIntBase& operator-=(const ModIntBase& rv) & { return x = norm(x - rv.x), *this; }
+    constexpr ModIntBase& operator/=(const ModIntBase& rv) & { return *this *= rv.inv(); } //
+
     constexpr ModIntBase& operator++() & { return x = norm(x + 1), *this; }
     constexpr ModIntBase& operator--() & { return x = norm(x - 1), *this; }
     constexpr ModIntBase operator++(int) { // 后置
@@ -72,11 +85,11 @@ public:
     friend constexpr ModIntBase operator-(ModIntBase lv, const ModIntBase& rv) { return lv -= rv; }
     friend constexpr ModIntBase operator*(ModIntBase lv, const ModIntBase& rv) { return lv *= rv; }
     friend constexpr ModIntBase operator/(ModIntBase lv, const ModIntBase& rv) { return lv /= rv; }
-    friend constexpr bool operator<(ModIntBase lv, const ModIntBase rv) { return lv.val() < rv.val(); }
-    friend constexpr bool operator==(ModIntBase lv, const ModIntBase rv) { return lv.val() == rv.val(); }
-    friend constexpr bool operator!=(ModIntBase lv, const ModIntBase rv) { return lv.val() != rv.val(); }
 
-    friend constexpr istream& operator>>(istream& in, ModIntBase<T, P>& v) {
+    friend constexpr strong_ordering operator<=>(ModIntBase& lhs, ModIntBase& rhs) { return lhs.val() <=> rhs.val(); }
+    friend constexpr bool operator==(ModIntBase& lv, const ModIntBase& rv) { return lv.val() == rv.val(); }
+
+    friend constexpr istream& operator>>(istream& in, ModIntBase& v) {
         T x;
         in >> x;
         v.x = v.norm(x % T(P));
@@ -85,34 +98,27 @@ public:
     friend constexpr ostream& operator<<(ostream& os, const ModIntBase& v) { return os << v.val(); }
 };
 
+template <uint32_t P>
+using ModInt32 = ModIntBase<uint32_t, P>;
 template <uint64_t P>
 using ModInt64 = ModIntBase<uint64_t, P>;
-using MI = ModInt64<MOD>;
 
-// Attention:
-// qpow 模数时，第一个参数应为 MI 类型
-// 除数为 MI 类型时，不要连乘
+using Mint = ModInt32<MOD>;
+// qpow 取模时，第一个参数应为 Mint 类型
 
 void solve() {
     int n;
     cin >> n;
 
-    vector<MI> vec(n);
-    for (MI& v : vec) {
-        cin >> v;
-    }
-
-    vector<MI> pre(n + 1);
-    MI ans = 0;
+    Mint ans = 0, sum = 0;
     for (int i = 0; i < n; ++i) {
-        pre[i + 1] = pre[i] + vec[i];
-        ans += pre[i] * vec[i];
+        int v;
+        cin >> v;
+        sum += v;
+        ans -= v * 1ll * v;
     }
-
-    ans /= n;
-    ans /= n - 1;
-    ans *= 2;
-
+    ans += sum * sum;
+    ans /= n * 1ll * (n - 1);
     cout << ans << "\n";
 }
 
