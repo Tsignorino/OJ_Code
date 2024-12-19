@@ -113,4 +113,12 @@
             "auto rnd = dis(gen); // 固定值"
         ]
     },
+    "下标排序": {
+        "prefix": "order",
+        "body": [
+            "vector<int> ord(n);",
+            "iota(ord.begin(), ord.end(), 0);",
+            "ranges::sort(ord, [&]()-> bool {});"
+        ]
+    }
 }
