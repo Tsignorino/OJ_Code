@@ -1,8 +1,17 @@
 #include <bits/stdc++.h>
 
-using namespace std;
+#include "debug.h"
 
-constexpr int MOD = 1e9 + 7;
+using namespace std;
+using ll = long long;
+
+static constexpr int MOD = 1'000'000'007;
+
+/*
+ * 不是只拼接一次，且操作是连接（不能用 GCD）
+ *
+ * 2024.5.5 数据太弱  hack数据：aabb（实际输出：2，预期输出：4）
+ */
 
 class Solution {
 public:
@@ -20,7 +29,6 @@ public:
                 for (int j = 0; j < len; j++) {
                     tmp[s[i + j] - 'a']++;
                 }
-
                 for (int j = 0; j < 26; j++) {
                     if (tmp[j] * (n / len) != cnt[j]) {
                         return false;
@@ -39,31 +47,8 @@ public:
     }
 };
 
-class Wrong_Solution { // 2024.5.5 数据太弱  hack数据：aabb（实际输出：2，预期输出：4）
-public:
-    int minAnagramLength(string s) {
-        unordered_map<char, int> ump;
-        for (char ch : s) {
-            ump[ch]++;
-        }
-
-        int g = 0;
-        for (auto& [_, v] : ump) {
-            g = gcd(g, v);
-        }
-
-        int ans = 0;
-        for (auto& [_, v] : ump) {
-            ans += (v / g);
-        }
-        return ans;
-    }
-};
-
 int main() {
     Solution sol;
-
-    // "jjj"        1
 
     return 0;
 }
